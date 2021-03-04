@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute highp vec4 vPosition;
+attribute vec4 vColor;
+attribute highp float aFact;
+
+uniform highp float fact;
+uniform bool mandelbrot;
+varying highp vec4 pos;
+
+uniform highp vec2 julia_c;
+
+void main(){
+    gl_Position = vPosition;
+    pos = vPosition;
+}
+</script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+uniform highp float fact;
+uniform bool mandelbrot;
+uniform highp vec2 center;
+varying highp vec4 pos;
+uniform highp float zoom;
+
+uniform highp vec2 julia_c;
+
+#define MAX_ITERATIONS 250
+
+int fractal(highp vec2 z0, highp vec2 c, highp int maxiterations){
+	highp vec2 z = z0;
+	int result = 0;
+
+	for(int i = 0; i < MAX_ITERATIONS; ++i){
+		if(i > maxiterations)
+			break;
+		result = i;
+		z = vec2(z.x*z.x-z.y*z.y,2.0*z.x*z.y) + c;
+		if((z.x*z.x)+(z.y*z.y) > 4.0){
+			break;
+		}
+	}
+
+	if(result == maxiterations){
+		return -1;
+	} else {
+		return result;
+	}
+}
+
+highp vec3 paletize(highp float v, highp float factor) {
+	if(v < 0.0)
+		return vec3(0.0, 0.0, 0.0);
+
+    highp float vv = v*factor;
+    return vec3(sin(vv/3.0), cos(vv/6.0), cos(vv/(12.0+3.14/4.0)));
+}
+
+void main() {
+	int result;
+	highp vec2 cent;
+	cent.x = center.x;
+	cent.y = center.y;
+
+	
+	if(mandelbrot){
+		
+		highp vec2 z0;
+		z0.x = 0.0;
+		z0.y = 0.0;
+
+		highp vec2 c;
+		c.x = cent.x+(zoom)*(pos.x);
+		c.y = cent.y+(zoom)*(pos.y);
+
+		result = fractal(z0, c, 200);
+
+	} else {
+
+		highp vec2 z0;
+		z0.x = cent.x+(zoom)*(pos.x);
+		z0.y = cent.y+(zoom)*(pos.y);
+
+		highp vec2 c = julia_c;
+
+		result = fractal(z0, c, 200);
+	}
+	
+
+    gl_FragColor = vec4(paletize(float(result), fact), 1.0);
+}
+
+
+</script>
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="fractal.js"></script>
+</head>
+<body>
+    <title>Triangle</title>
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops... your browser doesn't support the HTML5 canvas element"
+    </canvas>
+    <p>
+    	Factor: 
+    	<input type="range" id="factor" min="0" max="1" step="0.01" value="1">
+    </p>
+    <p>
+    	Fractal type:
+    	<select id="type" onchange="check(this.value);">
+    		<option value="1" selected> Mandelbrot </option>
+    		<option value="0"> Julia </option>
+    	</select>
+    	<p id="julia" style="display: none;">
+    		c =
+    		<input type="number" id="julia_r" min="-1" max="1" value="-0.4" step="0.01">
+    		+
+    		<input type="number" id="julia_i" min="-1" max="1" value="0.6" step="0.01">
+    		i
+    	</p>
+    </p>
+
+</body>
+</html>

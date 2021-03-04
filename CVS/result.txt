@@ -1,0 +1,52 @@
+Dafny 2.1.1.10209
+[ERROR] FATAL UNHANDLED EXCEPTION: System.AggregateException: One or more errors occurred. ---> System.IO.IOException: Write fault on path /home/goncalo/Dropbox/FCT/CVS/[Unknown]
+  at System.IO.FileStream.WriteInternal (System.Byte[] src, System.Int32 offset, System.Int32 count) [0x00077] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.FileStream.Write (System.Byte[] array, System.Int32 offset, System.Int32 count) [0x00090] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.StreamWriter.Flush (System.Boolean flushStream, System.Boolean flushEncoder) [0x0007e] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.StreamWriter.Write (System.Char[] buffer, System.Int32 index, System.Int32 count) [0x000d3] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.TextWriter.WriteLine (System.String value) [0x00070] in <f56c876907e742b0aa586f051fcce845>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcess.Send (System.String cmd) [0x00073] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcessTheoremProver.Send (System.String s, System.Boolean isCommon) [0x00033] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcessTheoremProver.SendThisVC (System.String s) [0x00001] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcessTheoremProver.Reset (Microsoft.Boogie.VCExpressionGenerator gen) [0x0001b] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.Checker.BeginCheck (System.String descriptiveName, Microsoft.Boogie.VCExprAST.VCExpr vc, Microsoft.Boogie.ProverInterface+ErrorHandler handler) [0x00025] in <636adf2109684393b663476450fc29b4>:0 
+  at VC.VCGen+Split.BeginCheck (Microsoft.Boogie.Checker checker, Microsoft.Boogie.VerifierCallback callback, VC.ModelViewInfo mvInfo, System.Int32 no, System.Int32 timeout) [0x0022c] in <636adf2109684393b663476450fc29b4>:0 
+  at VC.VCGen.VerifyImplementation (Microsoft.Boogie.Implementation impl, Microsoft.Boogie.VerifierCallback callback) [0x00724] in <636adf2109684393b663476450fc29b4>:0 
+  at VC.ConditionGeneration.VerifyImplementation (Microsoft.Boogie.Implementation impl, System.Collections.Generic.List`1[Microsoft.Boogie.Counterexample]& errors, System.String requestId) [0x00019] in <636adf2109684393b663476450fc29b4>:0 
+  at Microsoft.Boogie.ExecutionEngine.VerifyImplementation (Microsoft.Boogie.Program program, Microsoft.Boogie.PipelineStatistics stats, Microsoft.Boogie.ErrorReporterDelegate er, System.String requestId, System.Collections.Generic.Dictionary`2[TKey,TValue] extractLoopMappingInfo, Microsoft.Boogie.Implementation[] stablePrioritizedImpls, System.Int32 index, Microsoft.Boogie.ExecutionEngine+OutputCollector outputCollector, System.Collections.Generic.List`1[T] checkers, System.String programId) [0x00243] in <53eb3722dcdf4aabad0d796af07a06f6>:0 
+  at Microsoft.Boogie.ExecutionEngine+<>c__DisplayClass27_2.<InferAndVerify>b__5 (System.Object dummy) [0x00056] in <53eb3722dcdf4aabad0d796af07a06f6>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x00025] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00010] in <f56c876907e742b0aa586f051fcce845>:0 
+   --- End of inner exception stack trace ---
+  at System.AggregateException.Handle (System.Func`2[T,TResult] predicate) [0x00064] in <f56c876907e742b0aa586f051fcce845>:0 
+  at Microsoft.Boogie.ExecutionEngine.InferAndVerify (Microsoft.Boogie.Program program, Microsoft.Boogie.PipelineStatistics stats, System.String programId, Microsoft.Boogie.ErrorReporterDelegate er, System.String requestId) [0x004e0] in <53eb3722dcdf4aabad0d796af07a06f6>:0 
+  at Microsoft.Dafny.DafnyDriver.BoogiePipelineWithRerun (Microsoft.Boogie.Program program, System.String bplFileName, Microsoft.Boogie.PipelineStatistics& stats, System.String programId) [0x000bb] in <af24e93bae0d46eb8882c78e76cf2420>:0 
+  at Microsoft.Dafny.DafnyDriver.BoogieOnce (System.String baseFile, System.String moduleName, Microsoft.Boogie.Program boogieProgram, System.String programId, Microsoft.Boogie.PipelineStatistics& stats, Microsoft.Boogie.PipelineOutcome& oc) [0x00083] in <af24e93bae0d46eb8882c78e76cf2420>:0 
+  at Microsoft.Dafny.DafnyDriver.Boogie (System.String baseName, System.Collections.Generic.IEnumerable`1[T] boogiePrograms, System.String programId, System.Collections.Generic.Dictionary`2[System.String,Microsoft.Boogie.PipelineStatistics]& statss, Microsoft.Boogie.PipelineOutcome& oc) [0x0006e] in <af24e93bae0d46eb8882c78e76cf2420>:0 
+  at Microsoft.Dafny.DafnyDriver.ProcessFiles (System.Collections.Generic.IList`1[T] dafnyFiles, System.Collections.ObjectModel.ReadOnlyCollection`1[T] otherFileNames, Microsoft.Dafny.ErrorReporter reporter, System.Boolean lookForSnapshots, System.String programId) [0x00222] in <af24e93bae0d46eb8882c78e76cf2420>:0 
+  at Microsoft.Dafny.DafnyDriver.ThreadMain (System.String[] args) [0x0003a] in <af24e93bae0d46eb8882c78e76cf2420>:0 
+  at Microsoft.Dafny.DafnyDriver+<>c__DisplayClass1_0.<Main>b__0 () [0x00001] in <af24e93bae0d46eb8882c78e76cf2420>:0 
+  at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x00014] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00071] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x0002b] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.Threading.ThreadHelper.ThreadStart () [0x00008] in <f56c876907e742b0aa586f051fcce845>:0 
+---> (Inner Exception #0) System.IO.IOException: Write fault on path /home/goncalo/Dropbox/FCT/CVS/[Unknown]
+  at System.IO.FileStream.WriteInternal (System.Byte[] src, System.Int32 offset, System.Int32 count) [0x00077] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.FileStream.Write (System.Byte[] array, System.Int32 offset, System.Int32 count) [0x00090] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.StreamWriter.Flush (System.Boolean flushStream, System.Boolean flushEncoder) [0x0007e] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.StreamWriter.Write (System.Char[] buffer, System.Int32 index, System.Int32 count) [0x000d3] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.IO.TextWriter.WriteLine (System.String value) [0x00070] in <f56c876907e742b0aa586f051fcce845>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcess.Send (System.String cmd) [0x00073] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcessTheoremProver.Send (System.String s, System.Boolean isCommon) [0x00033] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcessTheoremProver.SendThisVC (System.String s) [0x00001] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.SMTLib.SMTLibProcessTheoremProver.Reset (Microsoft.Boogie.VCExpressionGenerator gen) [0x0001b] in <e59015f14a06446a80955b20210a43c2>:0 
+  at Microsoft.Boogie.Checker.BeginCheck (System.String descriptiveName, Microsoft.Boogie.VCExprAST.VCExpr vc, Microsoft.Boogie.ProverInterface+ErrorHandler handler) [0x00025] in <636adf2109684393b663476450fc29b4>:0 
+  at VC.VCGen+Split.BeginCheck (Microsoft.Boogie.Checker checker, Microsoft.Boogie.VerifierCallback callback, VC.ModelViewInfo mvInfo, System.Int32 no, System.Int32 timeout) [0x0022c] in <636adf2109684393b663476450fc29b4>:0 
+  at VC.VCGen.VerifyImplementation (Microsoft.Boogie.Implementation impl, Microsoft.Boogie.VerifierCallback callback) [0x00724] in <636adf2109684393b663476450fc29b4>:0 
+  at VC.ConditionGeneration.VerifyImplementation (Microsoft.Boogie.Implementation impl, System.Collections.Generic.List`1[Microsoft.Boogie.Counterexample]& errors, System.String requestId) [0x00019] in <636adf2109684393b663476450fc29b4>:0 
+  at Microsoft.Boogie.ExecutionEngine.VerifyImplementation (Microsoft.Boogie.Program program, Microsoft.Boogie.PipelineStatistics stats, Microsoft.Boogie.ErrorReporterDelegate er, System.String requestId, System.Collections.Generic.Dictionary`2[TKey,TValue] extractLoopMappingInfo, Microsoft.Boogie.Implementation[] stablePrioritizedImpls, System.Int32 index, Microsoft.Boogie.ExecutionEngine+OutputCollector outputCollector, System.Collections.Generic.List`1[T] checkers, System.String programId) [0x00243] in <53eb3722dcdf4aabad0d796af07a06f6>:0 
+  at Microsoft.Boogie.ExecutionEngine+<>c__DisplayClass27_2.<InferAndVerify>b__5 (System.Object dummy) [0x00056] in <53eb3722dcdf4aabad0d796af07a06f6>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x00025] in <f56c876907e742b0aa586f051fcce845>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00010] in <f56c876907e742b0aa586f051fcce845>:0 <---
+

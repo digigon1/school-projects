@@ -1,0 +1,55 @@
+<div id="about" class="margin">
+    <div id="info" class="shadow border background">
+        <div id="title1">
+            <h2>
+                Brief presentation
+            </h2>
+            <p>
+                I'm Gonçalo Almeida. I am a 21 year old student from Portugal. I'm studying computer engineering at FCT UNL.
+            </p>
+        </div>
+        <br>
+        <div id="title2">
+            <h2>
+                Languages known
+            </h2>
+            <ul>
+                <li> Java </li>
+                <li> C </li>
+                <li> Javascript (jQuery, Node.js) </li>
+                <li> HTML </li>
+                <li> CSS </li>
+                <li> OCaml </li>
+                <li> Python </li>
+            </ul>
+        </div>
+        <br>
+        <div id="title3">
+            <h2>
+                Techologies used in website
+            </h2>
+            <ul>
+                <li> HTML </li>
+                <li> CSS </li>
+                <li> Javascript (jQuery) </li>
+                <li> Google App Engine </li>
+                <li> Others... </li>
+            </ul>
+        </div>
+    </div>
+    <div id="sidebar">
+        <div id="anchor"></div>
+        <div id="points" class="shadow border background">
+            <ul>
+                <li onclick="scroll('#title1')"> Presentation </li>
+                <li onclick="scroll('#title2')"> Languages </li>
+                <li onclick="scroll('#title3')"> Technologies </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            moveScroller();
+        });
+    </script>
+</div>

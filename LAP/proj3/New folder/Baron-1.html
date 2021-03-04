@@ -1,0 +1,133 @@
+<HTML>
+
+<!--
+O Regresso do Barão!!! HTML
+
+	*** REESCREVA O TEXTO A SEGUIR! ***
+
+Autores: Fulano (99998), Sicrano (99999)
+
+O ficheiro "Baron.js" tem de incluir, logo nas primeiras linhas, um comentário
+inicial contendo: o nome e número dos dois alunos que realizaram o projeto;
+indicação de quais as partes do trabalho que foram feitas e das que não foram
+feitas (para facilitar uma correção sem enganos); ainda possivelmente alertando
+para alguns aspetos da implementação que possam ser menos óbvios para o avaliador.
+
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+
+<HEAD>
+<title>Linguagens e Ambientes de Programação (2015/2016) [Eng.Inf. - DI/FCT/UNL] - 3º projeto prático (Javascript)</title>
+
+<SCRIPT TYPE="text/javascript" src="Baron0.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript" src="Baron.js"></SCRIPT>
+
+<STYLE>
+    
+    header {
+        background:#eee;
+        height: 55px;
+    }
+    header h1 {
+		margin: 0;
+		padding-top:7px;
+	}
+			
+	main {
+		padding-bottom: 10010px;
+		margin-bottom: -10000px;
+		float: left;
+		width: 100%;
+	}
+	
+    p {
+		color: #555;
+	}
+	
+	nav {
+		padding-bottom: 09000px;
+		margin-bottom: -09000px;
+		float: left;
+		width: 230px;
+		margin-left: -230px;
+		background: #ccc;
+	}
+			
+	#mainwrapper {
+		overflow: hidden;
+	}
+						
+	#content {
+		margin-right: 330px; 
+	}
+			
+			
+    .innertube {
+		margin: 10px;
+		margin-top: 0;
+	}
+		
+
+	
+
+
+</STYLE>
+</HEAD>
+
+
+<BODY>
+    <header>
+        <div class="innertube">
+            <h1> Projecto nº3 LAP FCT-UNL 2016 </h1>
+        </div>
+    </header>
+    <div id="mainwrapper">
+        <main>
+            <div id="content">
+                <div class="innertube">
+                    <h1>
+                        <p>
+                            <font size="4" color="black"><b>O Regresso do Barão!!!</b> -- João Reis (43914), Francisco Cardoso (42997)
+                            </font>
+                        </p>
+                    </h1>
+                    <BODY onload="onLoad()">
+                        <FORM NAME="form1">
+	                        <CANVAS id="canvas1" width="704" height="480" style="border:1px solid #000000;">
+                            Your browser doesn't support the HTML5 CANVAS tag.
+                            </CANVAS> <br />
+                        </FORM>
+                    </BODY>
+                </div>
+            </div>
+        </main>
+        
+        <nav>
+            <div class="innertube">
+                <h3>
+                    <p> Reiniciar o jogo:</p>
+                </h3>
+                <INPUT TYPE="button" NAME="Restart" VALUE="Restart" SIZE=10 OnClick="b1()">
+                <h3>
+                    <p> Tempo de jogo:</p>
+                </h3>
+                <INPUT TYPE="button" NAME="Time" VALUE="Time" SIZE=10 OnClick="b2()">
+                <h3>
+                    <p> Nº restante de vidas:</p>
+                </h3>
+                <INPUT TYPE="button" NAME="Lifes" VALUE="Lifes" Size=10 OnClick="b3()">
+                <h3>
+                    <p> Pontuação:</p>
+                </h3>
+                <INPUT TYPE="button" NAME="Score" VALUE="Score" Size=10 OnClick="b4()">
+            </div>
+    </div>
+</BODY>
+
+	
+	
+
+
+</HTML>
+<!-- código inicial de AMD/2016 -->
+<!-- vim:set ts=4 sw=4 et: -->

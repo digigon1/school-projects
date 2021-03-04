@@ -1,0 +1,12 @@
+pCross: 0.6, pMut: 0.001, Cross Type: OX1, Mut Type: RAND
+Seed: 1486054825734
+Random choice: true
+Uses hillclimb: true
+Generations: 318897
+Population size: 100
+Elite size: 10
+Total execution time: 10.000093966
+Best final fit: 11480.0
+Final best solution: [0, 1, 2, 4, 3]
+Worst final fit: 17120.0
+Final worst solution: [0, 4, 2, 1, 3]

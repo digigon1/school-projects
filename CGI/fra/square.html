@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+varying vec2 pos;
+void main(){
+
+    gl_Position = vPosition;
+    pos = vec2(vPosition.x, vPosition.y);
+}
+</script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+varying vec2 pos;
+const int maxIters = 100;
+
+uniform float factor;
+uniform vec2 c;
+uniform bool isMandelbrot;
+uniform vec2 center;
+uniform float scale;
+
+vec2 multiplyComplex(vec2 a, vec2 b){
+    
+    float real = a[0]*b[0] - a[1]*b[1];
+    float imaginary = a[0]*b[1] + a[1]*b[0];
+
+    return vec2(real, imaginary);
+}
+
+int fractal(vec2 z0, vec2 c) {
+    vec2 z = z0;
+    int k;
+    for(int i=0; i<maxIters; i++) {
+        z = multiplyComplex(z,z) + c;
+        k=i;
+        if(z[0]*z[0] + z[1]*z[1] > 4.0) 
+            break;
+    }
+    
+    if( k==maxIters) return 0;
+    else return k;
+}
+
+vec3 paletize(float v, float factor) {
+    float vv = v*factor;
+    return vec3(sin(vv/3.0), cos(vv/6.0), cos(vv/(12.0+3.14/4.0)));
+}
+
+void main() {
+	float iter;
+	if(isMandelbrot)
+		iter = float(fractal(c, center+(scale)*pos));
+	else 
+		iter = float(fractal(center+(scale)*pos, c));
+		
+    vec3 color = paletize(iter,factor);
+    gl_FragColor = vec4(color,1.0);
+}
+</script>
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="square.js"></script>
+</head>
+<body>
+    <title>Fractals</title>
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops... your browser doesn't support the HTML5 canvas element"
+    </canvas>
+    <div>
+        <b>Factor: 0%
+			<input type="range" id="slide" min="0.1" max="1.0" step="0.1" value ="0.5" /> 100%
+			<p>Fractal Type: 
+		</b>
+		<select id="mymenu">
+			<option value="0">Mandelbrot</option>
+			<option value="1">Julia: c=-0.4+0.6i</option>
+			<option value="2">Julia: c=0.285+0i</option>
+			<option value="3">Julia: c=0.285+0.01i</option>
+			<option value="4">Julia: c=-0.8+0.156i</option>
+			<option value="5">Julia: c=0-0.8i</option>
+		</select>
+	</div>
+</body>
+</html>

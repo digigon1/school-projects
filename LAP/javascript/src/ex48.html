@@ -1,0 +1,36 @@
+<HTML>
+
+<HEAD>
+<TITLE>MyDocument</TITLE>
+
+<SCRIPT TYPE="text/javascript">
+
+function compute(n1) {
+	if(n1 == 1){
+		return "Not a prime number"
+	}
+	for (var i = 2; i <= Math.sqrt(n1); i++) {
+		if(n1%i == 0){
+			return "Not a prime number";
+		}
+	}
+	return "Is a prime number";
+}
+
+function runForm1(form) {
+    form.text3.value = compute(parseInt(form.text1.value))
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<H1>Is it prime?</H1>
+<FORM NAME="form1">
+     <INPUT TYPE="text" NAME="text1" VALUE="1" SIZE=10 style="text-align: right">
+   -> <INPUT TYPE="text" NAME="text3" VALUE="Not a prime number" SIZE=25 READONLY style="text-align: right; font-weight: bold">
+ <p> <INPUT TYPE="button" NAME="button1" VALUE="Check" ONCLICK="runForm1(form)">
+</FORM>
+</BODY>
+
+</HTML>

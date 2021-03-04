@@ -1,0 +1,112 @@
+<head>
+	<title>Javascript</title>
+	<link rel="stylesheet" href="resources/style.css" type="text/css">
+	<link rel="icon" href="resources/icon.ico">
+	<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+</head>
+
+<body>
+
+<script>
+
+	function load_script() {
+
+		var filename = document.getElementsByClassName('filename')[0].value;
+
+		var parsed = filename.replace("/", "");
+
+		var file = "src/"+parsed;
+
+		var ext = file.split('.').pop();
+		
+		var output = document.getElementsByClassName('output')[1];
+
+		if(ext == "js"){
+			var my_script = document.createElement('script');
+			my_script.setAttribute('src', file);
+			document.head.appendChild(my_script);
+		
+			output.innerHTML = "Loaded";
+		} else {
+			output.innerHTML = "File extension not recognised";
+		}
+	}
+
+	function run_script() {
+		var output = document.getElementsByClassName('output')[1];
+		var f_name = document.getElementsByClassName('function_name')[0].value;
+
+		if(typeof window[f_name] === 'function') {
+			output.innerHTML = window[f_name]();
+		}
+	}
+
+	function run_site() {
+		var filename = document.getElementsByClassName('filename')[0].value;
+
+		var parsed = filename.replace("/", "");
+
+		var sitename = "src/"+parsed;
+
+		var ext = sitename.split('.').pop();
+
+		var output = document.getElementsByClassName('output')[1];
+
+		if(ext == "html"){
+			output.innerHTML = `<iframe src=`+sitename+` frameBorder=0></iframe>`
+			//breaks on websites which use "X-Frame-Options: SAMEORIGIN" response header (ex: google, youtube, twitter)
+		} else {
+			output.innerHTML = "File extension not recognised";
+		}
+	}
+
+</script>
+
+<div class='title'> JS/HTML Loader </div>
+<br>
+
+<b>Filename: </b><br>
+<input class = "filename"></input>
+
+<br>
+<br>
+
+<b>Scripts:</b>
+<br>
+<button onclick="load_script()">
+	Load script
+</button>
+<br>
+<br>
+<input class="function_name" value="Function Name" onclick="this.select()"></input>
+
+<button onclick="run_script()">
+	Run
+</button>
+
+<br>
+<br>
+<br>
+
+<b>Sites:</b>
+<br>
+<button onclick="run_site()">
+	Load site
+</button>
+
+<br><br><br>
+
+<p class='output'>
+	Output:
+</p>
+
+<div class="output">
+	No script loaded
+</div>
+
+<br>
+<div class="footer">
+<a href="http://github.com/digigon1">Pseudo-copyright 2016, Goncalo Almeida</a>
+</div>
+
+</body>

@@ -1,0 +1,114 @@
+<HTML>
+
+<!--
+O Regresso do Barão!!! HTML
+
+	*** REESCREVA O TEXTO A SEGUIR! ***
+
+Autores: Adriano Batista (45128), Guilherme Alves (45001)
+
+Foi tudo implementado como era pedido no enunciado.
+
+O ficheiro "Baron.js" tem de incluir, logo nas primeiras linhas, um comentário
+inicial contendo: o nome e número dos dois alunos que realizaram o projeto;
+indicação de quais as partes do trabalho que foram feitas e das que não foram
+feitas (para facilitar uma correção sem enganos); ainda possivelmente alertando
+para alguns aspetos da implementação que possam ser menos óbvios para o avaliador.
+
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+
+<HEAD>
+<title>Linguagens e Ambientes de Programação (2015/2016) [Eng.Inf. - DI/FCT/UNL] - 3º projeto prático (Javascript)</title>
+
+<SCRIPT TYPE="text/javascript" src="Baron0.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript" src="Baron.js"></SCRIPT>
+
+</HEAD>
+
+
+<BODY onload="onLoad()">
+<p style="font-family:verdana; text-align:center"><b>O Regresso do Barao!!!</b> -- Guilherme Alves (45001), Adriano Batista (45128)
+<FORM NAME="form1" align="center">
+	<CANVAS id="canvas1" width="704" height="480" style="border:1px solid #000000;">
+        Your browser doesn't support the HTML5 CANVAS tag.
+    </CANVAS> <br><br/>
+
+	<INPUT TYPE="button" style="font-family:verdana;" NAME="button1" VALUE="Reset" SIZE=10 OnClick="b1()">
+	<INPUT TYPE="button" style="font-family:verdana;" NAME="button2" VALUE="Curiosidades"
+	 SIZE=10 OnClick="window.location.href = 
+	 'http://homepage.ntlworld.com/forgottenfutures/munch/munch.htm'">
+	<br><br/>
+
+	<div id="wrapper" style="width:705; margin:0 auto">
+
+	<div style="font-family:verdana;" class="lives"></div>
+
+	<style>
+	.lives {
+	text-align: center;
+	float:left;
+	margin:0 auto;
+    width: 115px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+	}
+	</style>
+
+	<div style="font-family:verdana;" class="balls"></div>
+	<style>
+	.balls {
+	text-align: center;
+	float:left;
+	margin:0 auto;
+    width: 115px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+	}
+	</style>
+
+	<div style="font-family:verdana;" class="level"></div>
+	<style>
+	.level {
+	text-align: center;
+	float:left;
+	margin:0 auto;
+    width: 115px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+	}
+	</style>
+
+	<div style="font-family:verdana;" class="score"></div>
+	<style>
+	.score {
+	text-align: center;
+	float:left;
+	margin:0 auto;
+    width: 115px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+	}
+	</style>
+
+	<div style="font-family:verdana;" class="time"></div>
+	<style>
+	.time {
+	text-align: center;
+	float:left;
+	margin:0 auto;
+    width: 115px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+	}
+	</style>
+
+	</div>
+
+</FORM>
+
+</BODY>
+
+</HTML>
+<!-- código inicial de AMD/2016 -->
+<!-- vim:set ts=4 sw=4 et: -->

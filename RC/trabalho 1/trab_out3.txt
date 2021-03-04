@@ -1,0 +1,1485 @@
+Testing cenario3 with jar: Trab1.jar
+Starting script... 1 40 1 5 50 file300K 
+SRV: New tftp server started at local port: 10512 window size: 50
+
+Testing Client JAR
+
+Sending file: "file300K" to server: /127.0.0.1:10512 from local port:58811
+
+SRV: START!
+CLT: ACK<0 : 0>
+got expected ack: 0
+CLT: ACK<1025 : 1>
+got expected ack: 1
+CLT: ACK<1 : 513>
+got expected ack: 513
+CLT: ACK<1537 : 1025>
+CLT: ACK<2561 : 1537>
+got expected ack: 1025
+got expected ack: 1537
+CLT: ACK<1537 : 2049>
+got expected ack: 2049
+CLT: ACK<3073 : 2561>
+got expected ack: 2561
+CLT: ACK<3073 : 3585>
+got expected ack: 3585
+CLT: ACK<3073 : 4097>
+got expected ack: 4097
+CLT: ACK<4609 : 3073>
+got expected ack: 3073
+CLT: ACK<6657 : 5121>
+got expected ack: 5121
+CLT: ACK<5121 : 4609>
+got expected ack: 4609
+CLT: ACK<5121 : 5633>
+CLT: ACK<5121 : 6145>
+got expected ack: 5633
+got expected ack: 6145
+CLT: ACK<7169 : 6657>
+got expected ack: 6657
+CLT: ACK<7169 : 8705>
+got expected ack: 8705
+CLT: ACK<7169 : 8193>
+CLT: ACK<9217 : 9729>
+got expected ack: 8193
+CLT: ACK<7681 : 7169>
+got expected ack: 9729
+got expected ack: 7169
+CLT: ACK<10241 : 12801>
+CLT: ACK<9217 : 10753>
+got expected ack: 12801
+got expected ack: 10753
+CLT: ACK<9217 : 7681>
+got expected ack: 7681
+CLT: ACK<10241 : 9217>
+got expected ack: 9217
+CLT: ACK<10241 : 11265>
+got expected ack: 11265
+CLT: ACK<10241 : 13313>
+CLT: ACK<11777 : 10241>
+got expected ack: 13313
+CLT: ACK<11777 : 14849>
+got expected ack: 10241
+CLT: ACK<11777 : 14337>
+got expected ack: 14849
+got expected ack: 14337
+CLT: ACK<11777 : 13825>
+CLT: ACK<12289 : 11777>
+got expected ack: 13825
+CLT: ACK<15361 : 12289>
+got expected ack: 11777
+got expected ack: 12289
+CLT: ACK<15873 : 15361>
+got expected ack: 15361
+CLT: ACK<16385 : 17921>
+got expected ack: 17921
+CLT: ACK<16385 : 15873>
+CLT: ACK<16385 : 17409>
+got expected ack: 15873
+got expected ack: 17409
+CLT: ACK<16385 : 19969>
+got expected ack: 19969
+CLT: ACK<16385 : 19457>
+got expected ack: 19457
+CLT: ACK<16385 : 18433>
+got expected ack: 18433
+CLT: ACK<16897 : 16385>
+got expected ack: 16385
+CLT: ACK<18945 : 16897>
+got expected ack: 16897
+CLT: ACK<20481 : 18945>
+got expected ack: 18945
+CLT: ACK<20993 : 20481>
+got expected ack: 20481
+CLT: ACK<22017 : 21505>
+got expected ack: 21505
+CLT: ACK<22529 : 23041>
+got expected ack: 23041
+CLT: ACK<21505 : 20993>
+got expected ack: 20993
+CLT: ACK<24577 : 22529>
+CLT: ACK<22529 : 22017>
+got expected ack: 22529
+CLT: ACK<22529 : 24065>
+got expected ack: 22017
+CLT: ACK<25089 : 24577>
+got expected ack: 24065
+got expected ack: 24577
+CLT: ACK<25601 : 25089>
+got expected ack: 25089
+CLT: ACK<26113 : 25601>
+got expected ack: 25601
+CLT: ACK<26113 : 26625>
+got expected ack: 26625
+CLT: ACK<27649 : 26113>
+got expected ack: 26113
+CLT: ACK<26113 : 27137>
+got expected ack: 27137
+CLT: ACK<27649 : 28161>
+got expected ack: 28161
+CLT: ACK<27649 : 28673>
+got expected ack: 28673
+CLT: ACK<29185 : 27649>
+got expected ack: 27649
+CLT: ACK<29697 : 29185>
+got expected ack: 29185
+CLT: ACK<30209 : 29697>
+CLT: ACK<30209 : 30721>
+got expected ack: 29697
+got expected ack: 30721
+CLT: ACK<31233 : 31745>
+got expected ack: 31745
+CLT: ACK<31233 : 30209>
+got expected ack: 30209
+CLT: ACK<32257 : 31233>
+got expected ack: 31233
+CLT: ACK<32769 : 32257>
+got expected ack: 32257
+CLT: ACK<32769 : 33281>
+got expected ack: 33281
+CLT: ACK<34817 : 34305>
+got expected ack: 34305
+CLT: ACK<33793 : 32769>
+got expected ack: 32769
+CLT: ACK<35329 : 34817>
+CLT: ACK<34305 : 33793>
+got expected ack: 34817
+got expected ack: 33793
+CLT: ACK<35841 : 35329>
+got expected ack: 35329
+CLT: ACK<36353 : 35841>
+got expected ack: 35841
+CLT: ACK<36865 : 36353>
+got expected ack: 36353
+CLT: ACK<37377 : 36865>
+got expected ack: 36865
+CLT: ACK<37889 : 37377>
+got expected ack: 37377
+CLT: ACK<38401 : 37889>
+got expected ack: 37889
+CLT: ACK<38913 : 38401>
+got expected ack: 38401
+CLT: ACK<38913 : 39937>
+got expected ack: 39937
+CLT: ACK<38913 : 39425>
+got expected ack: 39425
+CLT: ACK<40449 : 38913>
+got expected ack: 38913
+CLT: ACK<40961 : 41473>
+got expected ack: 41473
+CLT: ACK<40961 : 40449>
+got expected ack: 40449
+CLT: ACK<41985 : 40961>
+got expected ack: 40961
+CLT: ACK<41985 : 42497>
+got expected ack: 42497
+CLT: ACK<41985 : 43521>
+got expected ack: 43521
+CLT: ACK<41985 : 43009>
+got expected ack: 43009
+CLT: ACK<44033 : 44545>
+got expected ack: 44545
+CLT: ACK<45057 : 44033>
+got expected ack: 44033
+CLT: ACK<44033 : 41985>
+got expected ack: 41985
+timeout...
+CLT: ACK<45569 : 45057>
+got expected ack: 45057
+CLT: ACK<46593 : 46081>
+got expected ack: 46081
+CLT: ACK<46081 : 45569>
+got expected ack: 45569
+CLT: ACK<46593 : 47617>
+got expected ack: 47617
+CLT: ACK<46593 : 49665>
+got expected ack: 49665
+CLT: ACK<46593 : 49153>
+got expected ack: 49153
+CLT: ACK<46593 : 48129>
+CLT: ACK<46593 : 48641>
+got expected ack: 48129
+CLT: ACK<46593 : 50689>
+got expected ack: 48641
+CLT: ACK<46593 : 50177>
+got expected ack: 50689
+got expected ack: 50177
+CLT: ACK<46593 : 51201>
+got expected ack: 51201
+CLT: ACK<46593 : 51713>
+got expected ack: 51713
+CLT: ACK<46593 : 52225>
+got expected ack: 52225
+CLT: ACK<46593 : 52737>
+CLT: ACK<46593 : 53249>
+got expected ack: 52737
+got expected ack: 53249
+CLT: ACK<46593 : 54273>
+got expected ack: 54273
+CLT: ACK<46593 : 53761>
+got expected ack: 53761
+CLT: ACK<46593 : 54785>
+got expected ack: 54785
+CLT: ACK<46593 : 55297>
+CLT: ACK<46593 : 55809>
+got expected ack: 55297
+got expected ack: 55809
+CLT: ACK<46593 : 56833>
+got expected ack: 56833
+CLT: ACK<46593 : 57345>
+got expected ack: 57345
+CLT: ACK<46593 : 57857>
+got expected ack: 57857
+CLT: ACK<46593 : 58369>
+got expected ack: 58369
+CLT: ACK<46593 : 60417>
+got expected ack: 60417
+CLT: ACK<46593 : 58881>
+CLT: ACK<46593 : 59905>
+got expected ack: 58881
+got expected ack: 59905
+CLT: ACK<46593 : 60929>
+got expected ack: 60929
+CLT: ACK<46593 : 61441>
+got expected ack: 61441
+CLT: ACK<46593 : 62465>
+got expected ack: 62465
+CLT: ACK<46593 : 62977>
+got expected ack: 62977
+CLT: ACK<46593 : 61953>
+got expected ack: 61953
+CLT: ACK<46593 : 63489>
+got expected ack: 63489
+CLT: ACK<46593 : 64001>
+got expected ack: 64001
+CLT: ACK<46593 : 64513>
+got expected ack: 64513
+CLT: ACK<46593 : 65025>
+got expected ack: 65025
+CLT: ACK<46593 : 66049>
+got expected ack: 66049
+CLT: ACK<46593 : 65537>
+got expected ack: 65537
+CLT: ACK<46593 : 67585>
+got expected ack: 67585
+CLT: ACK<46593 : 66561>
+got expected ack: 66561
+CLT: ACK<46593 : 67073>
+got expected ack: 67073
+CLT: ACK<46593 : 68609>
+got expected ack: 68609
+CLT: ACK<46593 : 68097>
+got expected ack: 68097
+CLT: ACK<46593 : 69633>
+got expected ack: 69633
+CLT: ACK<46593 : 69121>
+got expected ack: 69121
+CLT: ACK<46593 : 70145>
+got expected ack: 70145
+CLT: ACK<46593 : 70657>
+got expected ack: 70657
+CLT: ACK<46593 : 71169>
+got expected ack: 71169
+CLT: ACK<46593 : 72193>
+got expected ack: 72193
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+CLT: ACK<46593 : -1>
+got wrong ack
+timeout...
+timeout...
+CLT: ACK<46593 : 23553>
+CLT: ACK<46593 : 56321>
+got expected ack: 23553
+got expected ack: 56321
+CLT: ACK<47105 : 59393>
+got expected ack: 59393
+CLT: ACK<47105 : 46593>
+CLT: ACK<47105 : -1>
+CLT: ACK<47105 : -1>
+got expected ack: 46593
+CLT: ACK<47105 : 71681>
+got wrong ack
+CLT: ACK<47105 : -1>
+got wrong ack
+CLT: ACK<47105 : -1>
+got expected ack: 71681
+got wrong ack
+got wrong ack
+CLT: ACK<72705 : 47105>
+got expected ack: 47105
+CLT: ACK<72705 : 77313>
+got expected ack: 77313
+CLT: ACK<72705 : 76289>
+got expected ack: 76289
+CLT: ACK<72705 : 79361>
+got expected ack: 79361
+CLT: ACK<73217 : 72705>
+got expected ack: 72705
+CLT: ACK<73217 : 73729>
+got expected ack: 73729
+CLT: ACK<73217 : 77825>
+got expected ack: 77825
+CLT: ACK<73217 : 75265>
+got expected ack: 75265
+CLT: ACK<73217 : 78337>
+got expected ack: 78337
+CLT: ACK<73217 : 76801>
+got expected ack: 76801
+CLT: ACK<73217 : 79873>
+got expected ack: 79873
+CLT: ACK<73217 : 81409>
+got expected ack: 81409
+CLT: ACK<73217 : 80897>
+got expected ack: 80897
+CLT: ACK<73217 : 81921>
+got expected ack: 81921
+CLT: ACK<73217 : 82433>
+got expected ack: 82433
+timeout...
+CLT: ACK<73217 : 83457>
+got expected ack: 83457
+CLT: ACK<73217 : 82945>
+got expected ack: 82945
+CLT: ACK<73217 : 84481>
+got expected ack: 84481
+CLT: ACK<73217 : 85505>
+got expected ack: 85505
+CLT: ACK<73217 : 83969>
+got expected ack: 83969
+CLT: ACK<73217 : 84993>
+got expected ack: 84993
+CLT: ACK<73217 : 86529>
+got expected ack: 86529
+CLT: ACK<73217 : 86017>
+got expected ack: 86017
+CLT: ACK<73217 : 87041>
+got expected ack: 87041
+CLT: ACK<73217 : 87553>
+got expected ack: 87553
+CLT: ACK<73217 : 89089>
+got expected ack: 89089
+CLT: ACK<73217 : 88065>
+CLT: ACK<73217 : 88577>
+got expected ack: 88065
+got expected ack: 88577
+CLT: ACK<73217 : 90113>
+got expected ack: 90113
+CLT: ACK<73217 : 90625>
+CLT: ACK<73217 : 89601>
+got expected ack: 90625
+got expected ack: 89601
+CLT: ACK<73217 : 92161>
+got expected ack: 92161
+CLT: ACK<73217 : 93185>
+got expected ack: 93185
+CLT: ACK<73217 : 91649>
+CLT: ACK<73217 : 93697>
+got expected ack: 91649
+got expected ack: 93697
+CLT: ACK<73217 : 95745>
+CLT: ACK<73217 : 96769>
+CLT: ACK<73217 : 95233>
+got expected ack: 95745
+got expected ack: 96769
+got expected ack: 95233
+CLT: ACK<73217 : 98817>
+got expected ack: 98817
+CLT: ACK<73217 : 98305>
+CLT: ACK<73217 : -1>
+got expected ack: 98305
+got wrong ack
+CLT: ACK<73217 : -1>
+got wrong ack
+CLT: ACK<73217 : -1>
+got wrong ack
+CLT: ACK<73217 : -1>
+got wrong ack
+CLT: ACK<73217 : -1>
+got wrong ack
+CLT: ACK<73217 : -1>
+got wrong ack
+CLT: ACK<73217 : -1>
+got wrong ack
+timeout...
+timeout...
+CLT: ACK<73217 : 80385>
+got expected ack: 80385
+CLT: ACK<74241 : 92673>
+got expected ack: 92673
+CLT: ACK<74241 : 74753>
+got expected ack: 74753
+CLT: ACK<74241 : 73217>
+got expected ack: 73217
+CLT: ACK<75777 : 74241>
+got expected ack: 74241
+CLT: ACK<74241 : 99329>
+got expected ack: 99329
+CLT: ACK<75777 : 99841>
+got expected ack: 99841
+CLT: ACK<75777 : -1>
+got wrong ack
+CLT: ACK<75777 : 100865>
+got expected ack: 100865
+CLT: ACK<75777 : 78849>
+got expected ack: 78849
+CLT: ACK<94721 : 75777>
+got expected ack: 75777
+CLT: ACK<94721 : 100353>
+got expected ack: 100353
+CLT: ACK<94721 : 94209>
+got expected ack: 94209
+CLT: ACK<94721 : 101377>
+got expected ack: 101377
+CLT: ACK<96257 : 94721>
+got expected ack: 94721
+CLT: ACK<96257 : 97281>
+got expected ack: 97281
+CLT: ACK<97793 : 96257>
+got expected ack: 96257
+CLT: ACK<97793 : 102401>
+got expected ack: 102401
+CLT: ACK<101889 : 97793>
+got expected ack: 97793
+CLT: ACK<101889 : 103425>
+got expected ack: 103425
+CLT: ACK<101889 : 102913>
+got expected ack: 102913
+CLT: ACK<101889 : 103937>
+got expected ack: 103937
+CLT: ACK<101889 : 104449>
+got expected ack: 104449
+CLT: ACK<101889 : 105473>
+got expected ack: 105473
+CLT: ACK<101889 : 104961>
+got expected ack: 104961
+CLT: ACK<101889 : 106497>
+got expected ack: 106497
+CLT: ACK<101889 : 105985>
+got expected ack: 105985
+CLT: ACK<101889 : 107521>
+got expected ack: 107521
+CLT: ACK<101889 : 107009>
+got expected ack: 107009
+CLT: ACK<101889 : 108545>
+got expected ack: 108545
+CLT: ACK<101889 : 109057>
+got expected ack: 109057
+CLT: ACK<101889 : 109569>
+got expected ack: 109569
+CLT: ACK<101889 : 108033>
+CLT: ACK<101889 : 110081>
+got expected ack: 108033
+CLT: ACK<101889 : 111105>
+got expected ack: 110081
+CLT: ACK<101889 : 110593>
+got expected ack: 111105
+CLT: ACK<101889 : 111617>
+got expected ack: 110593
+got expected ack: 111617
+CLT: ACK<101889 : 113153>
+got expected ack: 113153
+CLT: ACK<101889 : 112641>
+got expected ack: 112641
+CLT: ACK<101889 : 115201>
+got expected ack: 115201
+CLT: ACK<101889 : 116225>
+got expected ack: 116225
+CLT: ACK<101889 : 116737>
+got expected ack: 116737
+CLT: ACK<101889 : 117249>
+got expected ack: 117249
+CLT: ACK<101889 : 118273>
+got expected ack: 118273
+CLT: ACK<101889 : 117761>
+got expected ack: 117761
+CLT: ACK<101889 : 112129>
+got expected ack: 112129
+CLT: ACK<101889 : 113665>
+got expected ack: 113665
+CLT: ACK<101889 : 115713>
+CLT: ACK<101889 : 119297>
+got expected ack: 115713
+got expected ack: 119297
+CLT: ACK<114177 : 101889>
+got expected ack: 101889
+CLT: ACK<101889 : 112641>
+CLT: ACK<101889 : 111617>
+got wrong ack
+got wrong ack
+CLT: ACK<114177 : 118273>
+got wrong ack
+CLT: ACK<114177 : 118785>
+got expected ack: 118785
+CLT: ACK<114177 : 116225>
+got wrong ack
+CLT: ACK<114177 : 120321>
+got expected ack: 120321
+CLT: ACK<114177 : 119809>
+got expected ack: 119809
+CLT: ACK<114177 : 114689>
+got expected ack: 114689
+CLT: ACK<114177 : 115201>
+got wrong ack
+CLT: ACK<114177 : 110593>
+got wrong ack
+CLT: ACK<114177 : 111105>
+got wrong ack
+CLT: ACK<114177 : 118785>
+got wrong ack
+CLT: ACK<114177 : 119297>
+CLT: ACK<114177 : 117249>
+got wrong ack
+got wrong ack
+CLT: ACK<114177 : 117761>
+got wrong ack
+CLT: ACK<114177 : 120833>
+got expected ack: 120833
+CLT: ACK<114177 : 121857>
+got expected ack: 121857
+CLT: ACK<114177 : 121345>
+got expected ack: 121345
+CLT: ACK<114177 : 122369>
+got expected ack: 122369
+CLT: ACK<114177 : 123393>
+got expected ack: 123393
+CLT: ACK<114177 : 124929>
+got expected ack: 124929
+CLT: ACK<114177 : 127489>
+CLT: ACK<114177 : 123905>
+got expected ack: 127489
+got expected ack: 123905
+CLT: ACK<114177 : 125953>
+got expected ack: 125953
+CLT: ACK<114177 : 124417>
+got expected ack: 124417
+CLT: ACK<114177 : 125441>
+got expected ack: 125441
+CLT: ACK<114177 : 126977>
+got expected ack: 126977
+timeout...
+CLT: ACK<114177 : 130049>
+CLT: ACK<114177 : 129025>
+got expected ack: 130049
+CLT: ACK<114177 : 131073>
+got expected ack: 129025
+got expected ack: 131073
+CLT: ACK<114177 : 130561>
+CLT: ACK<114177 : 128513>
+got expected ack: 130561
+CLT: ACK<114177 : 129537>
+got expected ack: 128513
+CLT: ACK<114177 : 131585>
+got expected ack: 129537
+got expected ack: 131585
+CLT: ACK<114177 : 132609>
+got expected ack: 132609
+CLT: ACK<114177 : 135681>
+got expected ack: 135681
+CLT: ACK<114177 : 134145>
+got expected ack: 134145
+CLT: ACK<114177 : 134657>
+CLT: ACK<114177 : 133633>
+got expected ack: 134657
+CLT: ACK<114177 : 136193>
+got expected ack: 133633
+got expected ack: 136193
+CLT: ACK<114177 : 138753>
+CLT: ACK<114177 : 136705>
+CLT: ACK<114177 : 137729>
+got expected ack: 138753
+got expected ack: 136705
+CLT: ACK<114177 : 133121>
+got expected ack: 137729
+got expected ack: 133121
+CLT: ACK<114177 : 139265>
+got expected ack: 139265
+CLT: ACK<114177 : 137217>
+got expected ack: 137217
+CLT: ACK<114177 : 138241>
+got expected ack: 138241
+CLT: ACK<114177 : 139777>
+CLT: ACK<114177 : -1>
+got expected ack: 139777
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+got wrong ack
+CLT: ACK<114177 : -1>
+CLT: ACK<114177 : -1>
+got wrong ack
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+timeout...
+timeout...
+CLT: ACK<114177 : 122881>
+got expected ack: 122881
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : 126465>
+got expected ack: 126465
+CLT: ACK<114177 : 91137>
+got expected ack: 91137
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : -1>
+got wrong ack
+CLT: ACK<114177 : 132097>
+got expected ack: 132097
+CLT: ACK<140289 : 114177>
+got expected ack: 114177
+CLT: ACK<140289 : 135169>
+got expected ack: 135169
+CLT: ACK<140289 : 143873>
+got expected ack: 143873
+CLT: ACK<140289 : 142849>
+got expected ack: 142849
+CLT: ACK<140289 : 128001>
+got expected ack: 128001
+CLT: ACK<140289 : 145409>
+got expected ack: 145409
+CLT: ACK<140289 : 145921>
+got expected ack: 145921
+CLT: ACK<140289 : 146433>
+got expected ack: 146433
+CLT: ACK<140289 : 146945>
+got expected ack: 146945
+CLT: ACK<140289 : 147457>
+got expected ack: 147457
+timeout...
+CLT: ACK<140289 : 148481>
+CLT: ACK<140289 : 147969>
+got expected ack: 148481
+got expected ack: 147969
+CLT: ACK<140289 : 148993>
+got expected ack: 148993
+CLT: ACK<140289 : 149505>
+got expected ack: 149505
+CLT: ACK<140289 : 150529>
+got expected ack: 150529
+CLT: ACK<140289 : 150017>
+CLT: ACK<140289 : 153601>
+got expected ack: 150017
+CLT: ACK<140289 : 153089>
+got expected ack: 153601
+CLT: ACK<140289 : 152577>
+CLT: ACK<140289 : 151041>
+got expected ack: 153089
+got expected ack: 152577
+CLT: ACK<140289 : 152065>
+CLT: ACK<140289 : 151553>
+got expected ack: 151041
+got expected ack: 152065
+got expected ack: 151553
+CLT: ACK<140289 : 154625>
+CLT: ACK<140289 : 154113>
+got expected ack: 154625
+got expected ack: 154113
+CLT: ACK<140289 : 155649>
+CLT: ACK<140289 : 157697>
+got expected ack: 155649
+CLT: ACK<140289 : 155137>
+got expected ack: 157697
+got expected ack: 155137
+CLT: ACK<140289 : 156673>
+got expected ack: 156673
+CLT: ACK<140289 : 159233>
+CLT: ACK<140289 : 157185>
+got expected ack: 159233
+CLT: ACK<140289 : 159745>
+CLT: ACK<140289 : 156161>
+got expected ack: 157185
+got expected ack: 159745
+got expected ack: 156161
+CLT: ACK<140289 : 158721>
+got expected ack: 158721
+CLT: ACK<140289 : 160769>
+got expected ack: 160769
+CLT: ACK<140289 : 160257>
+got expected ack: 160257
+CLT: ACK<140289 : 161793>
+got expected ack: 161793
+CLT: ACK<140289 : 161281>
+got expected ack: 161281
+CLT: ACK<140289 : 163329>
+got expected ack: 163329
+CLT: ACK<140289 : 162817>
+got expected ack: 162817
+CLT: ACK<140289 : 162305>
+got expected ack: 162305
+CLT: ACK<140289 : 163841>
+CLT: ACK<140289 : 164353>
+got expected ack: 163841
+CLT: ACK<140289 : 164865>
+got expected ack: 164353
+CLT: ACK<140289 : 165377>
+got expected ack: 164865
+got expected ack: 165377
+CLT: ACK<140289 : 165889>
+got expected ack: 165889
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+CLT: ACK<140289 : -1>
+got wrong ack
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+timeout...
+timeout...
+CLT: ACK<140289 : 142337>
+got expected ack: 142337
+CLT: ACK<140289 : 144897>
+got expected ack: 144897
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : 140801>
+got expected ack: 140801
+CLT: ACK<140289 : 141825>
+got expected ack: 141825
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<140289 : 144385>
+got expected ack: 144385
+CLT: ACK<140289 : -1>
+got wrong ack
+CLT: ACK<141313 : 140289>
+got expected ack: 140289
+CLT: ACK<141313 : 143361>
+got expected ack: 143361
+CLT: ACK<141313 : 158209>
+got expected ack: 158209
+CLT: ACK<141313 : 166913>
+got expected ack: 166913
+CLT: ACK<141313 : 166401>
+got expected ack: 166401
+CLT: ACK<167425 : 141313>
+got expected ack: 141313
+CLT: ACK<167425 : 171521>
+got expected ack: 171521
+CLT: ACK<167425 : 167937>
+got expected ack: 167937
+CLT: ACK<167425 : 172545>
+got expected ack: 172545
+CLT: ACK<167425 : 172033>
+got expected ack: 172033
+timeout...
+CLT: ACK<167425 : 174081>
+got expected ack: 174081
+CLT: ACK<167425 : 173569>
+got expected ack: 173569
+CLT: ACK<167425 : 174593>
+got expected ack: 174593
+CLT: ACK<167425 : 173057>
+got expected ack: 173057
+CLT: ACK<167425 : 177665>
+got expected ack: 177665
+CLT: ACK<167425 : 178177>
+CLT: ACK<167425 : 176641>
+got expected ack: 178177
+got expected ack: 176641
+CLT: ACK<167425 : 177153>
+got expected ack: 177153
+CLT: ACK<167425 : 175617>
+got expected ack: 175617
+CLT: ACK<167425 : 175105>
+got expected ack: 175105
+CLT: ACK<167425 : 179713>
+got expected ack: 179713
+CLT: ACK<167425 : 181761>
+CLT: ACK<167425 : 182785>
+got expected ack: 181761
+CLT: ACK<167425 : 180737>
+got expected ack: 182785
+CLT: ACK<167425 : 182273>
+got expected ack: 180737
+got expected ack: 182273
+CLT: ACK<167425 : 181249>
+CLT: ACK<167425 : 180225>
+got expected ack: 181249
+got expected ack: 180225
+CLT: ACK<167425 : 183297>
+CLT: ACK<167425 : 184321>
+got expected ack: 183297
+got expected ack: 184321
+CLT: ACK<167425 : 184833>
+got expected ack: 184833
+CLT: ACK<167425 : 185345>
+got expected ack: 185345
+CLT: ACK<167425 : 185857>
+got expected ack: 185857
+CLT: ACK<167425 : 187905>
+got expected ack: 187905
+CLT: ACK<167425 : 187393>
+CLT: ACK<167425 : 186881>
+got expected ack: 187393
+got expected ack: 186881
+CLT: ACK<167425 : 188929>
+got expected ack: 188929
+CLT: ACK<167425 : 186369>
+got expected ack: 186369
+CLT: ACK<167425 : 188417>
+got expected ack: 188417
+CLT: ACK<167425 : 189441>
+got expected ack: 189441
+CLT: ACK<167425 : 189953>
+got expected ack: 189953
+CLT: ACK<167425 : 190977>
+got expected ack: 190977
+CLT: ACK<167425 : 190465>
+got expected ack: 190465
+CLT: ACK<167425 : 191489>
+CLT: ACK<167425 : -1>
+got expected ack: 191489
+CLT: ACK<167425 : 192513>
+got wrong ack
+CLT: ACK<167425 : 192001>
+got expected ack: 192513
+got expected ack: 192001
+CLT: ACK<167425 : -1>
+got wrong ack
+CLT: ACK<167425 : -1>
+got wrong ack
+CLT: ACK<167425 : -1>
+got wrong ack
+CLT: ACK<167425 : 171009>
+got expected ack: 171009
+CLT: ACK<167425 : 169473>
+got expected ack: 169473
+CLT: ACK<167425 : -1>
+got wrong ack
+CLT: ACK<167425 : 183809>
+CLT: ACK<167425 : 170497>
+got expected ack: 183809
+got expected ack: 170497
+CLT: ACK<167425 : 179201>
+got expected ack: 179201
+CLT: ACK<168449 : -1>
+CLT: ACK<168449 : -1>
+got wrong ack
+got wrong ack
+CLT: ACK<168449 : 167425>
+CLT: ACK<168961 : 168449>
+got expected ack: 167425
+CLT: ACK<168449 : -1>
+got expected ack: 168449
+CLT: ACK<168449 : 176129>
+got wrong ack
+CLT: ACK<168961 : 192001>
+got expected ack: 176129
+CLT: ACK<168961 : 194049>
+got wrong ack
+got expected ack: 194049
+CLT: ACK<178689 : 168961>
+got expected ack: 168961
+CLT: ACK<168961 : 169985>
+CLT: ACK<193537 : 195585>
+got expected ack: 169985
+CLT: ACK<193537 : 193025>
+got expected ack: 195585
+got expected ack: 193025
+CLT: ACK<193537 : 196609>
+got expected ack: 196609
+timeout...
+CLT: ACK<193537 : 197121>
+got expected ack: 197121
+CLT: ACK<193537 : 197633>
+got expected ack: 197633
+CLT: ACK<193537 : 198145>
+got expected ack: 198145
+CLT: ACK<193537 : 198657>
+CLT: ACK<193537 : 199681>
+got expected ack: 198657
+CLT: ACK<193537 : 199169>
+got expected ack: 199681
+got expected ack: 199169
+CLT: ACK<193537 : 200705>
+got expected ack: 200705
+CLT: ACK<193537 : 203777>
+got expected ack: 203777
+CLT: ACK<193537 : 201217>
+got expected ack: 201217
+CLT: ACK<193537 : 203265>
+CLT: ACK<193537 : 202241>
+got expected ack: 203265
+CLT: ACK<193537 : 200193>
+got expected ack: 202241
+got expected ack: 200193
+CLT: ACK<193537 : 204289>
+got expected ack: 204289
+CLT: ACK<193537 : 204801>
+CLT: ACK<193537 : 205825>
+got expected ack: 204801
+got expected ack: 205825
+CLT: ACK<193537 : 206849>
+got expected ack: 206849
+CLT: ACK<193537 : 205313>
+got expected ack: 205313
+CLT: ACK<193537 : 209409>
+got expected ack: 209409
+CLT: ACK<193537 : 207873>
+got expected ack: 207873
+CLT: ACK<193537 : 208385>
+CLT: ACK<193537 : 206337>
+CLT: ACK<193537 : 209921>
+got expected ack: 208385
+CLT: ACK<193537 : 208897>
+got expected ack: 206337
+CLT: ACK<193537 : 207361>
+got expected ack: 209921
+got expected ack: 208897
+got expected ack: 207361
+CLT: ACK<193537 : 211969>
+got expected ack: 211969
+CLT: ACK<193537 : 210945>
+got expected ack: 210945
+CLT: ACK<193537 : 211457>
+got expected ack: 211457
+CLT: ACK<193537 : 212481>
+CLT: ACK<193537 : 210433>
+got expected ack: 212481
+CLT: ACK<193537 : 215041>
+got expected ack: 210433
+CLT: ACK<193537 : 213505>
+got expected ack: 215041
+CLT: ACK<193537 : 214017>
+got expected ack: 213505
+CLT: ACK<193537 : 212993>
+got expected ack: 214017
+CLT: ACK<193537 : 216065>
+got expected ack: 212993
+got expected ack: 216065
+CLT: ACK<193537 : 214529>
+CLT: ACK<193537 : 215553>
+got expected ack: 214529
+CLT: ACK<193537 : 216577>
+got expected ack: 215553
+got expected ack: 216577
+CLT: ACK<193537 : 217601>
+got expected ack: 217601
+CLT: ACK<193537 : 217089>
+got expected ack: 217089
+CLT: ACK<193537 : 218113>
+CLT: ACK<193537 : 218625>
+got expected ack: 218113
+CLT: ACK<193537 : -1>
+got expected ack: 218625
+CLT: ACK<193537 : -1>
+CLT: ACK<193537 : -1>
+got wrong ack
+got wrong ack
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+CLT: ACK<193537 : -1>
+got wrong ack
+timeout...
+timeout...
+CLT: ACK<193537 : 178689>
+got expected ack: 178689
+CLT: ACK<194561 : 193537>
+got expected ack: 193537
+CLT: ACK<194561 : 219137>
+got expected ack: 219137
+CLT: ACK<194561 : 219649>
+CLT: ACK<194561 : 202753>
+got expected ack: 219649
+got expected ack: 202753
+CLT: ACK<194561 : -1>
+got wrong ack
+CLT: ACK<194561 : 196097>
+got expected ack: 196097
+CLT: ACK<194561 : 220161>
+CLT: ACK<194561 : 201729>
+CLT: ACK<194561 : -1>
+got expected ack: 220161
+got expected ack: 201729
+got wrong ack
+CLT: ACK<195073 : 194561>
+got expected ack: 194561
+CLT: ACK<195073 : 220673>
+got expected ack: 220673
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+timeout...
+timeout...
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+CLT: ACK<195073 : -1>
+got wrong ack
+timeout...
+CLT: ACK<221185 : 195073>
+got expected ack: 195073
+CLT: ACK<221697 : 221185>
+got expected ack: 221185
+CLT: ACK<221697 : 224769>
+CLT: ACK<221697 : 222721>
+got expected ack: 224769
+CLT: ACK<221697 : 224257>
+got expected ack: 222721
+CLT: ACK<225793 : 223233>
+CLT: ACK<223233 : 222209>
+got expected ack: 224257
+got expected ack: 223233
+got expected ack: 222209
+CLT: ACK<221697 : 225281>
+got expected ack: 225281
+CLT: ACK<225793 : 227329>
+CLT: ACK<225793 : 226817>
+got expected ack: 227329
+CLT: ACK<225793 : 227841>
+got expected ack: 226817
+got expected ack: 227841
+CLT: ACK<225793 : 228353>
+got expected ack: 228353
+CLT: ACK<229377 : 228865>
+got expected ack: 228865
+CLT: ACK<225793 : 226305>
+got expected ack: 226305
+CLT: ACK<228865 : 225793>
+got expected ack: 225793
+CLT: ACK<229889 : 229377>
+got expected ack: 229377
+CLT: ACK<229377 : 230913>
+got expected ack: 230913
+CLT: ACK<229889 : 231937>
+CLT: ACK<229889 : 230401>
+got expected ack: 231937
+CLT: ACK<229889 : 231425>
+got expected ack: 230401
+CLT: ACK<232449 : 233985>
+got expected ack: 231425
+got expected ack: 233985
+CLT: ACK<232449 : 229889>
+CLT: ACK<229889 : 232961>
+got expected ack: 229889
+CLT: ACK<234497 : 233473>
+got expected ack: 232961
+CLT: ACK<233473 : 232449>
+got expected ack: 233473
+got expected ack: 232449
+CLT: ACK<236033 : 234497>
+got expected ack: 234497
+CLT: ACK<232449 : 235009>
+got expected ack: 235009
+CLT: ACK<236545 : 236033>
+got expected ack: 236033
+CLT: ACK<236545 : 240129>
+got expected ack: 240129
+CLT: ACK<236545 : 237057>
+got expected ack: 237057
+CLT: ACK<236545 : 237569>
+CLT: ACK<236545 : 241153>
+got expected ack: 237569
+CLT: ACK<236545 : 239105>
+CLT: ACK<236545 : 240641>
+got expected ack: 241153
+CLT: ACK<236545 : 241665>
+got expected ack: 239105
+got expected ack: 240641
+CLT: ACK<236545 : 239617>
+got expected ack: 241665
+CLT: ACK<236545 : 243201>
+got expected ack: 239617
+CLT: ACK<236545 : 242177>
+got expected ack: 243201
+CLT: ACK<236545 : 243713>
+got expected ack: 242177
+CLT: ACK<236545 : 242689>
+got expected ack: 243713
+CLT: ACK<236545 : 244737>
+got expected ack: 242689
+got expected ack: 244737
+CLT: ACK<236545 : 244225>
+got expected ack: 244225
+CLT: ACK<236545 : 245761>
+got expected ack: 245761
+CLT: ACK<236545 : 245249>
+got expected ack: 245249
+CLT: ACK<236545 : 246785>
+CLT: ACK<236545 : 247809>
+got expected ack: 246785
+CLT: ACK<236545 : 246273>
+got expected ack: 247809
+CLT: ACK<236545 : 248833>
+got expected ack: 246273
+got expected ack: 248833
+CLT: ACK<236545 : 249345>
+CLT: ACK<236545 : 249857>
+got expected ack: 249345
+CLT: ACK<236545 : 247297>
+got expected ack: 249857
+CLT: ACK<236545 : 251393>
+got expected ack: 247297
+CLT: ACK<236545 : 248321>
+got expected ack: 251393
+CLT: ACK<236545 : 250881>
+got expected ack: 248321
+got expected ack: 250881
+CLT: ACK<236545 : 250369>
+got expected ack: 250369
+CLT: ACK<236545 : 251905>
+got expected ack: 251905
+timeout...
+CLT: ACK<236545 : 254977>
+got expected ack: 254977
+CLT: ACK<236545 : 252929>
+CLT: ACK<236545 : 254465>
+got expected ack: 252929
+got expected ack: 254465
+CLT: ACK<236545 : 253441>
+CLT: ACK<236545 : 255489>
+got expected ack: 253441
+CLT: ACK<236545 : 257537>
+got expected ack: 255489
+got expected ack: 257537
+CLT: ACK<236545 : 258049>
+got expected ack: 258049
+CLT: ACK<236545 : 256001>
+got expected ack: 256001
+CLT: ACK<236545 : 257025>
+got expected ack: 257025
+CLT: ACK<236545 : 256513>
+got expected ack: 256513
+CLT: ACK<236545 : 258561>
+got expected ack: 258561
+CLT: ACK<236545 : 259073>
+got expected ack: 259073
+CLT: ACK<236545 : 260097>
+got expected ack: 260097
+CLT: ACK<236545 : 259585>
+got expected ack: 259585
+CLT: ACK<236545 : 262145>
+CLT: ACK<236545 : -1>
+got expected ack: 262145
+CLT: ACK<236545 : 260609>
+got wrong ack
+got expected ack: 260609
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : 261633>
+got expected ack: 261633
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : -1>
+CLT: ACK<236545 : -1>
+got wrong ack
+got wrong ack
+CLT: ACK<236545 : -1>
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : 261121>
+got wrong ack
+CLT: ACK<236545 : 221697>
+got expected ack: 261121
+CLT: ACK<236545 : 235521>
+got expected ack: 221697
+CLT: ACK<236545 : -1>
+CLT: ACK<236545 : 253953>
+got expected ack: 235521
+got wrong ack
+got expected ack: 253953
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<236545 : 238081>
+got expected ack: 238081
+CLT: ACK<236545 : -1>
+got wrong ack
+CLT: ACK<252417 : 264193>
+got expected ack: 264193
+CLT: ACK<236545 : 238593>
+CLT: ACK<252417 : 236545>
+got expected ack: 238593
+got expected ack: 236545
+CLT: ACK<262657 : 252417>
+got expected ack: 252417
+CLT: ACK<252417 : 223745>
+got expected ack: 223745
+CLT: ACK<262657 : 265729>
+got expected ack: 265729
+CLT: ACK<263169 : 262657>
+got expected ack: 262657
+CLT: ACK<263169 : 267777>
+got expected ack: 267777
+CLT: ACK<263169 : 267265>
+got expected ack: 267265
+CLT: ACK<263169 : 268289>
+got expected ack: 268289
+CLT: ACK<263169 : 269313>
+CLT: ACK<263169 : 268801>
+got expected ack: 269313
+CLT: ACK<263169 : 269825>
+got expected ack: 268801
+got expected ack: 269825
+timeout...
+CLT: ACK<263169 : 270849>
+got expected ack: 270849
+CLT: ACK<263169 : 270337>
+got expected ack: 270337
+CLT: ACK<263169 : 273409>
+CLT: ACK<263169 : 272385>
+CLT: ACK<263169 : 271873>
+got expected ack: 273409
+got expected ack: 272385
+CLT: ACK<263169 : 271361>
+got expected ack: 271873
+got expected ack: 271361
+CLT: ACK<263169 : 272897>
+got expected ack: 272897
+CLT: ACK<263169 : 273921>
+got expected ack: 273921
+CLT: ACK<263169 : 275457>
+got expected ack: 275457
+CLT: ACK<263169 : 276481>
+got expected ack: 276481
+CLT: ACK<263169 : 277505>
+CLT: ACK<263169 : 274433>
+got expected ack: 277505
+CLT: ACK<263169 : 279041>
+got expected ack: 274433
+CLT: ACK<263169 : 278017>
+got expected ack: 279041
+CLT: ACK<263169 : 278529>
+got expected ack: 278017
+CLT: ACK<263169 : 276993>
+got expected ack: 278529
+CLT: ACK<263169 : 280065>
+got expected ack: 276993
+CLT: ACK<263169 : 274945>
+got expected ack: 280065
+CLT: ACK<263169 : 280577>
+got expected ack: 274945
+CLT: ACK<263169 : 279553>
+got expected ack: 280577
+got expected ack: 279553
+CLT: ACK<263169 : 281089>
+got expected ack: 281089
+CLT: ACK<263169 : 282113>
+CLT: ACK<263169 : 282625>
+got expected ack: 282113
+CLT: ACK<263169 : 281601>
+got expected ack: 282625
+CLT: ACK<263169 : 285697>
+CLT: ACK<263169 : 283649>
+got expected ack: 281601
+got expected ack: 285697
+CLT: ACK<263169 : 285185>
+CLT: ACK<263169 : 284161>
+got expected ack: 283649
+CLT: ACK<263169 : 286209>
+got expected ack: 285185
+CLT: ACK<263169 : 284673>
+got expected ack: 284161
+CLT: ACK<263169 : 287233>
+got expected ack: 286209
+got expected ack: 284673
+got expected ack: 287233
+CLT: ACK<263169 : 286721>
+got expected ack: 286721
+CLT: ACK<263169 : 287745>
+got expected ack: 287745
+CLT: ACK<263169 : 288769>
+got expected ack: 288769
+CLT: ACK<263169 : -1>
+got wrong ack
+CLT: ACK<263169 : -1>
+got wrong ack
+CLT: ACK<263169 : -1>
+got wrong ack
+CLT: ACK<263169 : -1>
+got wrong ack
+CLT: ACK<263169 : -1>
+got wrong ack
+CLT: ACK<263169 : -1>
+got wrong ack
+CLT: ACK<263169 : -1>
+CLT: ACK<263169 : -1>
+got wrong ack
+got wrong ack
+CLT: ACK<263169 : -1>
+got wrong ack
+timeout...
+timeout...
+CLT: ACK<263681 : 263169>
+got expected ack: 263169
+CLT: ACK<263681 : 265217>
+got expected ack: 265217
+CLT: ACK<264705 : 263681>
+CLT: ACK<264705 : 289281>
+got expected ack: 263681
+got expected ack: 289281
+CLT: ACK<264705 : 288257>
+got expected ack: 288257
+CLT: ACK<264705 : 266753>
+got expected ack: 266753
+CLT: ACK<264705 : -1>
+got wrong ack
+CLT: ACK<264705 : -1>
+got wrong ack
+CLT: ACK<264705 : 266241>
+got expected ack: 266241
+CLT: ACK<264705 : -1>
+got wrong ack
+CLT: ACK<264705 : 275969>
+got expected ack: 275969
+CLT: ACK<264705 : -1>
+got wrong ack
+CLT: ACK<264705 : 289793>
+got expected ack: 289793
+CLT: ACK<264705 : 283137>
+got expected ack: 283137
+CLT: ACK<290305 : 264705>
+got expected ack: 264705
+CLT: ACK<290305 : 291841>
+got expected ack: 291841
+CLT: ACK<290305 : 293889>
+got expected ack: 293889
+CLT: ACK<290305 : 292865>
+got expected ack: 292865
+timeout...
+timeout...
+CLT: ACK<290305 : 290817>
+got expected ack: 290817
+CLT: ACK<291329 : 290305>
+got expected ack: 290305
+CLT: ACK<291329 : 293377>
+CLT: ACK<295425 : 292353>
+got expected ack: 293377
+CLT: ACK<291329 : 294913>
+CLT: ACK<292353 : 291329>
+got expected ack: 292353
+got expected ack: 294913
+CLT: ACK<291329 : 294401>
+got expected ack: 291329
+got expected ack: 294401
+CLT: ACK<296449 : 295937>
+got expected ack: 295937
+CLT: ACK<296961 : 296449>
+got expected ack: 296449
+CLT: ACK<296961 : 297985>
+got expected ack: 297985
+CLT: ACK<298497 : 297473>
+CLT: ACK<297473 : 296961>
+got expected ack: 297473
+got expected ack: 296961
+CLT: ACK<299009 : 298497>
+got expected ack: 298497
+CLT: ACK<297473 : 299521>
+got expected ack: 299521
+CLT: ACK<300001 : 299009>
+got expected ack: 299009
+timeout...
+timeout...
+timeout...
+timeout...
+CLT: ACK<300001 : 295425>
+got expected ack: 295425
+Done...
+
+Transfer stats:
+
+File size:			300000
+Packets sent:			586
+End-to-end transfer time:	14.140 s
+End-to-end transfer speed:	0.170 M bps
+Average rtt:			271.951 ms
+Average window size: 14.974
+Average timeout measure: 650.114

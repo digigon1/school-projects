@@ -1,0 +1,168 @@
+body{
+    margin: 0;
+    min-height: 100%;
+    background: whitesmoke;
+    min-width: 500px;
+
+    /* footer */
+    position: relative;
+}
+
+#header{
+    font-family: "Signika", sans-serif;
+    height: 5rem;
+    background: #3A4B9F;
+    background: linear-gradient(#3A4B9F, #2383BF);
+    color: #BF6128;
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+
+.name{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    vertical-align: middle;
+    display: table;
+    font-weight: 500;
+}
+
+.nameDiv{
+    display: table-cell;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    font-size: 20pt;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nameDiv a:hover, .nameDiv a:active, .button:hover, .button:active, .links a:hover, .links a:active, #points li:hover, #points li:active{
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+
+    min-width: 500px;
+    width: 100%;
+    height: 50%;
+}
+
+.button{
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+
+    min-width: 200px;
+    text-align: center;
+    font-size: 16pt;
+
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#content{
+    font-family: "Muli", sans-serif;
+    padding: 5px;
+    background-color: whitesmoke;
+    text-align: center;
+    height: auto;
+
+    min-height: calc(100% - 10rem - 4px);
+}
+
+.links a{
+    text-decoration: none;
+    color: #BFAE30;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.links{
+    margin: 0 20% 0 20%;
+}
+
+#about{
+    display: flex;
+}
+
+#info{
+    padding: 16px;
+    flex: 1;
+    max-width: calc(100% - (160px + 10px + 8px));
+}
+
+#info ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+#points{
+    margin-left: 10px;
+    padding: 8px;
+    float: left;
+    min-width: inherit;
+    height: 0;
+    display: table;
+    color: #BFAE30;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#points ul{
+    margin: 16px;
+    padding: 0;
+    list-style-type: none;
+}
+
+#sidebar{
+    width: 160px;
+    float: right;
+}
+
+.shadow{
+    -webkit-box-shadow: 0 5px 5px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 5px 5px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 5px 2px rgba(0,0,0,0.2);
+}
+
+.border{
+    border: ridge #2383BF;
+}
+
+.background{
+    background: #959CCE;
+}
+
+.margin{
+    margin: 0 20% 0 20%;
+}
+
+#projects {
+    padding: 20px;
+}
+
+#footer {
+
+    text-align: center;
+    background: linear-gradient(#2383BF, #3A4B9F);
+    color: #BF6128;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+
+    display: flex;
+
+    /* TODO Fix footer */
+    /* position: absolute; */
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: 1rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+#footer p{
+    flex: 1;
+    margin: 0;
+}

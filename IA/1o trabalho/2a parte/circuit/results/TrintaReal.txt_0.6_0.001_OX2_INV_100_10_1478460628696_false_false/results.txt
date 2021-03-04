@@ -1,0 +1,12 @@
+pCross: 0.6, pMut: 0.001, Cross Type: OX2, Mut Type: INV
+Seed: 1478460628696
+Random choice: false
+Uses hillclimb: false
+Generations: 2721
+Population size: 100
+Elite size: 10
+Total execution time: 10.002199174
+Best final fit: 2300086.0
+Final best solution: [5, 2, 16, 18, 29, 10, 20, 1, 23, 25, 22, 13, 19, 14, 0, 24, 27, 9, 8, 7, 15, 3, 12, 4, 28, 6, 11, 17, 21, 26]
+Worst final fit: 2300086.0
+Final worst solution: [5, 2, 16, 18, 29, 10, 20, 1, 23, 25, 22, 13, 19, 14, 0, 24, 27, 9, 8, 7, 15, 3, 12, 4, 28, 6, 11, 17, 21, 26]

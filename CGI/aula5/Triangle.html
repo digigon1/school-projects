@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+attribute vec4 vColor;
+varying vec4 fColor;
+
+uniform mat4 ctm;
+
+void main(){
+
+
+    gl_Position = vPosition * ctm;
+    fColor = vColor;
+}
+</script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+uniform vec4 color;
+varying vec4 fColor;
+void main() {
+    gl_FragColor = fColor; //fColor; //vec4(1.0, 0.0, 0.0, 1.0);
+}
+</script>
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="triangle.js"></script>
+</head>
+<body>
+    <title>Triangle</title>
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops... your browser doesn't support the HTML5 canvas element"
+    </canvas>
+    <p>
+    	Translation X: <input type="range" id="trans_x" min="-1" max="1" step="0.01" value="0" onchange="changeX(this.value)">
+    </p>
+    <p>
+    	Translation Y: <input type="range" id="tran_y" min="-1" max="1" step="0.01" value="0" onchange="changeY(this.value)">
+    </p>
+    <p>
+    	Scale X: <input type="range" id="scale_x" min="0.05" max="2.0" step="0.05" value="1.0" onchange="scaleX(this.value)">
+    </p>
+    <p>
+    	Scale Y: <input type="range" id="scale_y" min="0.05" max="2.0" step="0.05" value="1.0" onchange="scaleY(this.value)">
+    </p>
+    <p>
+    	Rotation: <input type="range" id="rotation" min="-180.0" max="180" step="0.5" value="0.0" onchange="changeRot(this.value)">
+    </p>
+</body>
+</html>

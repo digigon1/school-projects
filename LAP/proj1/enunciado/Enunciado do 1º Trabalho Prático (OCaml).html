@@ -1,0 +1,562 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>Enunciado do 1º Trabalho Prático (OCaml)</title>
+
+</head><body alink="#FF0000" link="#0000EE" text="#000000" vlink="#551A8B" bgcolor="#E0F0E0">
+
+<h1>Linguagens e Ambientes de Programação (2015/2016) [Eng.Inf. - DI/FCT/UNL]</h1>
+<h2>Enunciado do 1º Projeto Prático (OCaml)</h2>
+<h4>Artur Miguel Dias</h4>
+
+<hr><h2>Datas</h2>
+<li>24/Mar (16:00) - Divulgação deste enunciado
+</li><li>08/Abr (20:00) - Data e hora limite de entrega do 1º projeto
+</li><li>10/Abr (20:00) - Data e hora limite de entrega com atraso. Um valor de penalização por cada dia de atraso.
+<p>
+</p><hr><h2>Changelog</h2>
+<ul>
+<li>27/Mar - Foi adicionado um exemplo junto à descrição de cada uma das funções do projeto.
+</li><li>23/Mar - Possíveis correções a este enunciado serão assinaladas aqui.
+</li></ul>
+
+<hr><h1><!--A HREF="submiss2016-1.html"-->Regras de submissão (later...)
+
+<hr></h1><h1><font size="+4">Geocaching statistics</font></h1>
+
+<p>This project is about gathering some statistics from a database of geocaches.
+
+</p><hr><h1>What is Geocaching?</h1>
+
+With the widespread use of  <a href="http://en.wikipedia.org/wiki/Global_Positioning_System">GPS</a>
+<a href="https://www.google.pt/search?q=gps+receivers+geocaching&amp;tbm=isch">receivers</a>, there are more and more games and activities that take advantage of the possibility of determining the
+coordinates of the current location. This promotes outdoor fun and physical activity for the whole family.
+
+<p> Here are some of these games and activities that use GPS: <a href="http://geodashing.gpsgames.org/">Geodashing</a>, <a href="http://www.confluence.org/">Degree Confluence Project</a>, 
+<a href="http://www.geocaching.com/mark/">Benchmarking</a>, <a href="http://www.wherigo.com/">Wherigo</a>, <a href="http://www.geocaching.com/">Geocaching</a>, <a href="http://www.waymarking.com/">Waymarking</a>, <a href="https://www.ingress.com/">Ingress</a>.
+
+</p><p> As of now, Geocaching is the most popular GPS game with more 
+than one million active players and 2.8 million geocaches worldwide. In 
+Portugal there are 30 thousand players and 45 thousand geocaches 
+available. As you can see in <a href="https://www.geocaching.com/map/default.aspx?lat=38.468917&amp;lng=-28.3994#?ll=48.588478,-28.643288&amp;z=3">this interactive map</a>,
+ the USA and Europe are "covered" with caches. (Note that the placement 
+of the caches in this map is subjected to a random error of about 20 
+meters; only registered players have access to the exact coordinates.)
+
+</p><p> Geocaching consists in finding physical <i>treasures</i> (called <b>geocaches</b> or more simply <b>caches</b>)
+ which are hidden in supposedly interesting locations. Some physical 
+activity is often involved in reaching those locations. In English, the 
+word "cache" is synonymous with "treasure", "hideout" and "stash".
+
+</p><p>A typical cache is a waterproof container containing a logbook 
+and some small goodies that the visitor can exchange. The player 
+discovers the container, signs the logbook, and hides back the 
+container. Later, at home, the player writes an electronic log at the 
+geocaching site to share their experiences with the others.  
+
+</p><p>Sometimes hiding a treasure involves clever techniques so that the cache does not get stolen. For example: <a href="http://i.imgur.com/maf7E9S.jpg">hide1</a>, <a href="https://beatuproadsign.files.wordpress.com/2011/02/dsc05132.jpg">hide2</a>, <a href="https://s-media-cache-ak0.pinimg.com/564x/50/ed/32/50ed32353c2606ecdf0e1a9bacc0c6ad.jpg">hide3</a>. 
+
+</p><p>Here is some vocabulary and concepts concerned with Geocaching: <a href="http://www.geocaching.com/about/cache_types.aspx">caches kinds</a>, <a href="http://support.groundspeak.com/index.php?pg=kb.page&amp;id=75">cache sizes</a>, <a href="http://www.geocaching.com/about/glossary.aspx#dt">difficulty/terrain (D/T)</a>, <a href="http://www.geocaching.com/about/glossary.aspx">general glossary</a>
+
+
+</p><hr><h1>Data representation</h1>
+
+To represent caches in this project, we use the OCaml type below. It is a
+ record type made of 16 fields. The second column, within comments, 
+shows actual data from an existing cache, to help understanding the 
+meaning of each field.
+
+<ul><pre>type cache = {          (* <font color="green">Example:</font> *)
+    code: string;       (* <font color="green">"GCK1JY"</font>  url: <a href="http://coord.info/GCK1JY">http://coord.info/GCK1JY</a><a> *)
+    name: string;       (* <font color="green">"Atlantis [Pico]"</font> *)
+    state: string;      (* <font color="green">"ARQUIPÉLAGO DOS AÇORES"</font> *)
+    owner: string;      (* <font color="green">"Joao&amp;Olivia"</font> *)
+    latitude: float;    (* <font color="green">38.468917</font> *)
+    longitude: float;   (* <font color="green">-28.3994</font> *)
+    kind: string;       (* <font color="green">"TRADITIONAL"</font>  options: "MULTI", "PUZZLE", etc. *)
+    size: string;       (* <font color="green">"REGULAR"</font>  options: "MICRO", "SMALL", "LARGE", etc. *)
+    difficulty: float;  (* <font color="green">2.0</font>  options: 1.0, 1.5, 2.0, ..., 4.5, 5.0 *)
+    terrain: float;     (* <font color="green">4.5</font>  options: 1.0, 1.5, 2.0, ..., 4.5, 5.0 *)
+    status: string;     (* <font color="green">"AVAILABLE"</font> options: "AVAILABLE", "DISABLED" *)
+    hiddenDate: string; (* <font color="green">"2004/07/20"</font> *)
+    nFounds: int;       (* <font color="green">196</font> *)
+    nNotFounds: int;    (* <font color="green">25</font> *)
+    nFavourites: int;   (* <font color="green">48</font> *)
+    altitude: int       (* <font color="green">2286</font>  // -32768 means "altitude unknown" *)
+} ;;
+</a></pre></ul><a>
+
+In our database, every field of every cache is filled, except for the 
+altitude of some caches. When the altitude is not available, the special
+ negative value -32768 represents this situation.
+
+<p>The representation of caches in a text file is very simple. Each 
+cache is defined by a sequence of 16 lines. The entire file is a 
+sequence of cache representations.
+
+</p><p>In this project there is the requirement that the database is 
+never empty. The function "load" must raise as exception if it detects 
+that the file contains zero caches.
+
+</p><p>To exemplify, here is a sequence of 16 lines representing a particular cache in a file:
+
+</p><ul><pre>GCK1JY
+Atlantis [Pico]
+ARQUIPÉLAGO DOS AÇORES
+Joao&amp;Olivia
+38.468917
+-28.3994
+TRADITIONAL
+REGULAR
+2
+4.5
+AVAILABLE
+2004/07/20
+196
+25
+48
+2286
+</pre></ul>
+
+</a><p><a>To test your program, here is a small file containing a single cache: </a><a href="http://ctp.di.fct.unl.pt/lei/lap/projs/proj2016-1/files/Atlantis.txt">Atlantis.txt</a><a>. Also, a large file containing the 999 oldest currently active Portuguese caches: </a><a href="http://ctp.di.fct.unl.pt/lei/lap/projs/proj2016-1/files/Portugal2007.txt">Portugal2007.txt</a><a>
+
+
+</a></p><hr><h1><a>Goal of the project</a></h1><a>
+
+This project uses geocaching as as excuse for practicing in OCaml the use of lists and high order functions over lists.
+
+<p>The aim is to write a module named "Geocaching" with functions that gather statistics from data about the geocaches.
+
+</p></a><p><a>Use this file as starting point to write the module body: "</a><a href="http://ctp.di.fct.unl.pt/lei/lap/projs/proj2016-1/files/Geocaching.ml">Geocaching.ml</a><a>". The module interface is already fully written and you are not allowed to change it: "</a><a href="http://ctp.di.fct.unl.pt/lei/lap/projs/proj2016-1/files/Geocaching.mli">Geocaching.mli</a><a>".
+ Note that the module interface exports everything, except the auxiliary
+ constants and function you likely will need to define.
+
+</a></p><p><a>It is not mandatory to develop this project in Linux. 
+However, you must test the final version of the module in the 
+laboratories because the official environmental for this project is the 
+Linux version installed in the laboratories.
+
+</a></p><p><a>It is recommended you develop the project in Eclipse but, of course, this is also not mandatory.
+
+
+</a></p><hr><h1><a>Evaluation and grades</a></h1><a>
+
+Around 80% of your grade will be automatically assigned by Mooshak. The 
+remaining 20% will be assigned manually by checking out the quality of 
+the code. Only in case of code of extremely bad quality, or code that 
+uses the forbidden imperative mechanisms of OCaml, or code that 
+constantly simulates imperative mechanisms and concepts, a special rule 
+will be used so that the grade will be always below 50%, even if the 
+program works.
+
+<p>To compile your code, Mooshak will use the following command
+
+</p><ul><pre>ocamlc -c Geocaching.mli Geocaching.ml
+</pre></ul>
+
+After that, Mooshak will test the compiled module like this: 
+
+<ul><pre>$ ocaml
+    Objective Caml version 4.02.0
+# #load "Geocaching.cmo" ;;
+# open Geocaching ;;
+...
+...
+</pre></ul>
+
+
+
+<hr><h1>The module Geocaching</h1>
+
+There are 18 public functions to implement. It may seem a lot, but note that many of them are similar.
+
+</a><p><a>Write the functions using the inductive method. Also, write some auxiliary generic functions in the style of the end of the </a><a href="http://ctp.di.fct.unl.pt/miei/lap/teoricas/07.html">lecture 7</a><a>. Furthermore, take advantage of the functions of the </a><a href="http://caml.inria.fr/pub/docs/manual-ocaml-312/libref/List.html">module List</a><a> and the </a><a href="http://caml.inria.fr/pub/docs/manual-ocaml-312/libref/String.html">module String</a><a>.
+
+
+</a></p><pre><a><b>load: string -&gt; cache list</b>
+</a></pre><a>
+</a><ul><a>
+Load a sequence of caches from the file <tt>filename</tt>. The result should not be empty; otherwise raise an exception.
+</a><pre><a># let q = load "</a><a href="http://ctp.di.fct.unl.pt/lei/lap/projs/proj2016-1/files/Duas.txt">Duas.txt</a><a>" ;;
+val q : cache list =
+  [{code = "GC8C23"; name = "Picture your Flag [Lisboa]"; state = "LISBOA";
+    owner = "ricardobsilva"; latitude = 38.7675; longitude = -9.0941;
+    kind = "VIRTUAL"; size = "VIRTUAL"; difficulty = 1.; terrain = 1.;
+    status = "AVAILABLE"; hiddenDate = "2002/09/09"; nFounds = 3821;
+    nNotFounds = 1; nFavourites = 144; altitude = 0};
+   {code = "GCK1JY"; name = "Atlantis [Pico]";
+    state = "ARQUIPÉLAGO DOS AÇORES"; owner = "Joao&amp;Olivia";
+    latitude = 38.468917; longitude = -28.3994; kind = "TRADITIONAL";
+    size = "REGULAR"; difficulty = 2.; terrain = 4.5; status = "AVAILABLE";
+    hiddenDate = "2004/07/20"; nFounds = 196; nNotFounds = 25;
+    nFavourites = 48; altitude = 2286}]
+</a></pre></ul><a>
+
+
+<pre><b>count: cache list -&gt; int</b>
+</pre>
+<ul>
+This is simply the length of a cache list.
+<pre># count q ;;
+- : int = 2
+</pre></ul>
+
+<pre><b>hiddenDateSort: cache list -&gt; cache list</b>
+</pre>
+<ul>
+Sort a cache list in descending order using the 'hiddenDate' field as 
+key. To break ties use the cache codes, also in descending order. 
+Therefore, the head of the result will be the cache more recently 
+hidden.
+<pre># hiddenDateSort q ;;
+- : cache list =
+[{code = "GCK1JY"; name = "Atlantis [Pico]";
+  state = "ARQUIPÉLAGO DOS AÇORES"; owner = "Joao&amp;Olivia";
+  latitude = 38.468917; longitude = -28.3994; kind = "TRADITIONAL";
+  size = "REGULAR"; difficulty = 2.; terrain = 4.5; status = "AVAILABLE";
+  hiddenDate = "2004/07/20"; nFounds = 196; nNotFounds = 25;
+  nFavourites = 48; altitude = 2286};
+ {code = "GC8C23"; name = "Picture your Flag [Lisboa]"; state = "LISBOA";
+  owner = "ricardobsilva"; latitude = 38.7675; longitude = -9.0941;
+  kind = "VIRTUAL"; size = "VIRTUAL"; difficulty = 1.; terrain = 1.;
+  status = "AVAILABLE"; hiddenDate = "2002/09/09"; nFounds = 3821;
+  nNotFounds = 1; nFavourites = 144; altitude = 0}]
+</pre></ul>
+
+
+<pre><b>altitudeSort: cache list -&gt; cache list</b>
+</pre>
+<ul>
+Sort a cache list in descending order using the 'altitude' field as key.
+ To break ties use the cache codes, also in descending order. Therefore,
+ the head of the result will be the cache at highest altitude.
+
+<p>Also, please discard from the result the caches with unknown altitude.
+</p><pre># altitudeSort q ;;
+- : cache list =
+[{code = "GCK1JY"; name = "Atlantis [Pico]";
+  state = "ARQUIPÉLAGO DOS AÇORES"; owner = "Joao&amp;Olivia";
+  latitude = 38.468917; longitude = -28.3994; kind = "TRADITIONAL";
+  size = "REGULAR"; difficulty = 2.; terrain = 4.5; status = "AVAILABLE";
+  hiddenDate = "2004/07/20"; nFounds = 196; nNotFounds = 25;
+  nFavourites = 48; altitude = 2286};
+ {code = "GC8C23"; name = "Picture your Flag [Lisboa]"; state = "LISBOA";
+  owner = "ricardobsilva"; latitude = 38.7675; longitude = -9.0941;
+  kind = "VIRTUAL"; size = "VIRTUAL"; difficulty = 1.; terrain = 1.;
+  status = "AVAILABLE"; hiddenDate = "2002/09/09"; nFounds = 3821;
+  nNotFounds = 1; nFavourites = 144; altitude = 0}]
+</pre></ul>
+
+<pre><b>nFoundsSort: cache list -&gt; cache list</b>
+</pre>
+<ul>
+Sort a cache list in descending order using the 'nFounds' field as key. 
+To break ties use the cache codes, also in descending order. Therefore, 
+the head of the result will be the cache with more found.
+<pre># nFoundsSort q ;;
+- : cache list =
+[{code = "GC8C23"; name = "Picture your Flag [Lisboa]"; state = "LISBOA";
+  owner = "ricardobsilva"; latitude = 38.7675; longitude = -9.0941;
+  kind = "VIRTUAL"; size = "VIRTUAL"; difficulty = 1.; terrain = 1.;
+  status = "AVAILABLE"; hiddenDate = "2002/09/09"; nFounds = 3821;
+  nNotFounds = 1; nFavourites = 144; altitude = 0};
+ {code = "GCK1JY"; name = "Atlantis [Pico]";
+  state = "ARQUIPÉLAGO DOS AÇORES"; owner = "Joao&amp;Olivia";
+  latitude = 38.468917; longitude = -28.3994; kind = "TRADITIONAL";
+  size = "REGULAR"; difficulty = 2.; terrain = 4.5; status = "AVAILABLE";
+  hiddenDate = "2004/07/20"; nFounds = 196; nNotFounds = 25;
+  nFavourites = 48; altitude = 2286}]
+</pre></ul>
+
+
+<pre><b>northmost: cache list -&gt; cache</b>
+</pre>
+<ul>
+Find the northmost cache. To break ties use the cache with higher code.
+<pre># northmost q ;;
+- : cache =
+{code = "GC8C23"; name = "Picture your Flag [Lisboa]"; state = "LISBOA";
+ owner = "ricardobsilva"; latitude = 38.7675; longitude = -9.0941;
+ kind = "VIRTUAL"; size = "VIRTUAL"; difficulty = 1.; terrain = 1.;
+ status = "AVAILABLE"; hiddenDate = "2002/09/09"; nFounds = 3821;
+ nNotFounds = 1; nFavourites = 144; altitude = 0}
+</pre></ul>
+
+
+<pre><b>southmost: cache list -&gt; cache</b>
+</pre>
+<ul>
+Find the southmost cache. To break ties use the cache with higher code.
+<pre># southmost q ;;
+- : cache =
+{code = "GCK1JY"; name = "Atlantis [Pico]"; state = "ARQUIPÉLAGO DOS AÇORES";
+ owner = "Joao&amp;Olivia"; latitude = 38.468917; longitude = -28.3994;
+ kind = "TRADITIONAL"; size = "REGULAR"; difficulty = 2.; terrain = 4.5;
+ status = "AVAILABLE"; hiddenDate = "2004/07/20"; nFounds = 196;
+ nNotFounds = 25; nFavourites = 48; altitude = 2286}
+</pre></ul>
+
+
+<pre><b>eastmost: cache list -&gt; cache</b>
+</pre>
+<ul>
+Find the eastmost cache. To break ties use the cache with higher code.
+<pre># eastmost q ;;
+- : cache =
+{code = "GC8C23"; name = "Picture your Flag [Lisboa]"; state = "LISBOA";
+ owner = "ricardobsilva"; latitude = 38.7675; longitude = -9.0941;
+ kind = "VIRTUAL"; size = "VIRTUAL"; difficulty = 1.; terrain = 1.;
+ status = "AVAILABLE"; hiddenDate = "2002/09/09"; nFounds = 3821;
+ nNotFounds = 1; nFavourites = 144; altitude = 0}
+</pre></ul>
+
+
+<pre><b>westmost: cache list -&gt; cache</b>
+</pre>
+<ul>
+Find the westmost cache. To break ties use the cache with higher code.
+<pre># westmost q ;;
+- : cache =
+{code = "GCK1JY"; name = "Atlantis [Pico]"; state = "ARQUIPÉLAGO DOS AÇORES";
+ owner = "Joao&amp;Olivia"; latitude = 38.468917; longitude = -28.3994;
+ kind = "TRADITIONAL"; size = "REGULAR"; difficulty = 2.; terrain = 4.5;
+ status = "AVAILABLE"; hiddenDate = "2004/07/20"; nFounds = 196;
+ nNotFounds = 25; nFavourites = 48; altitude = 2286} 
+</pre></ul>
+
+
+<pre><b>ownerCount: cache list -&gt; (string * int) list</b>
+</pre>
+<ul>
+Calculate the number of caches of each owner, registering the values in a
+ list of pairs (owner, count). Then sort the list in descending order by
+ number of caches of each owner as key. To break ties, use the owner 
+names, also in descending order. Therefore, the head of the result will 
+correspond to the owner with more caches.
+<pre># ownerCount q ;;
+- : (string * int) list = [("ricardobsilva", 1); ("Joao&amp;Olivia", 1)]
+</pre></ul>
+
+
+<pre><b>kindCount: cache list -&gt; (string * int) list</b>
+</pre>
+<ul>
+Calculate the number of caches of each kind, registering the values in a
+ list of pairs (kind, count). Then sort the list in descending order by 
+number of caches of each kind. To break ties, use the kind names, also 
+in descending order. Therefore, the head of the result will correspond 
+to the kind with more caches.
+<pre># kindCount q ;;
+- : (string * int) list = [("VIRTUAL", 1); ("TRADITIONAL", 1)]
+</pre></ul>
+
+
+<pre><b>sizeCount: cache list -&gt; (string * int) list</b>
+</pre>
+<ul>
+Calculate the number of caches of each size, registering the values in a
+ list of pairs (size, count). Then sort the list in descending order by 
+the number of caches of each size. To break ties, use the size names, 
+also in descending order. Therefore, the head of the result will 
+correspond to the size with more caches.
+<pre># sizeCount q ;;
+- : (string * int) list = [("VIRTUAL", 1); ("REGULAR", 1)]
+</pre></ul>
+
+
+<pre><b>stateCount: cache list -&gt; (string * int) list</b>
+</pre>
+<ul>
+Calculate the number of caches in each state, registering the values in a
+ list of pairs (state, count). Then sort the list in descending order by
+ number of caches of each state. To break ties, use the state names, 
+also in descending order. Therefore, the head of the result will 
+correspond to the state with more caches.
+<pre># stateCount q ;;
+- : (string * int) list = [("LISBOA", 1); ("ARQUIPÉLAGO DOS AÇORES", 1)]
+</pre></ul>
+
+<pre><b>terrainCount: cache list -&gt; (float * int) list</b>
+</pre>
+<ul>
+Calculate the number of caches of each terrain level, registering the 
+values in a list of pairs (terrain, count). Then sort the list in 
+descending order by number of caches of each terrain level. To break 
+ties, use the terrain levels, also in descending order. Therefore, the 
+head of the result will correspond to the terrain level with more 
+caches.
+<pre># terrainCount q ;;
+- : (float * int) list = [(4.5, 1); (1., 1)]
+</pre></ul>
+
+
+<pre><b>difficultyCount: cache list -&gt; (float * int) list</b>
+</pre>
+<ul>
+Calculate the number of caches of each difficulty level, registering the
+ values in a list of pairs (difficulty, count). Then sort the list in 
+descending order by number of caches of each difficulty level. To break 
+ties, use the difficulty levels, also in descending order. Therefore, 
+the head of the result will correspond to the difficulty level with more
+ caches.
+<pre># difficultyCount q ;;
+- : (float * int) list = [(2., 1); (1., 1)]
+</pre></ul>
+
+<pre><b>matrix81: cache list -&gt; int list list</b>
+</pre>
+<ul>
+Create a matrix 9x9, registering the number of caches for each of the 81
+ available combinations terrain/difficulty. The matrix is a list of 
+lists of integers. The first list is for the difficulty level "1", the 
+second list is for the difficulty level "1.5", and so on. Use the image 
+below for inspiration.
+<p><img src="Enunciado%20do%201%C2%BA%20Trabalho%20Pr%C3%A1tico%20%28OCaml%29_files/matrix81.jpg">
+</p><pre># matrix81 q ;;
+- : int list list =
+[[1; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 1; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0]]
+</pre></ul>
+
+<pre><b>datesMatrix: cache list -&gt; int list list</b>
+</pre>
+<ul>
+Create a matrix 12x12, registering the number of caches for each of the 
+144 available combinations month/year of hidden dates between Jan/2001 
+and Dec/2012. The matrix is a list of lists of integers. The first list 
+is for the year 2001; the second list is for the year 2002, and so on.
+<pre># datesMatrix q ;;
+- : int list list =
+[[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 1; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 1; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0];
+ [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]; [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]]
+</pre></ul>
+
+<pre><b>neighborsCount: cache list -&gt; float -&gt; (string * int) list</b>
+</pre>
+<ul>
+For each cache, count the neighbor caches that are at a distance less or
+ equal than a given value in km. Register the values in a list of pairs 
+(cache code, count). Then sort the list in descending order by count 
+(the 2nd component). To break ties, use the cache codes, also in 
+descending order. Therefore, the head of the result will correspond to 
+the cache with more neighbors within a range.
+<pre># neighborsCount q 100.0 ;;
+- : (string * int) list = [("GCK1JY", 0); ("GC8C23", 0)]
+</pre></ul>
+
+
+<hr><h1>Regras principais</h1>
+<ul>
+<li>Produza um ficheiro chamado <tt>Geocaching.ml</tt>. Nas regras de submissão, a publicar mais tarde, será explicada a forma de submeter no Mooshak.
+
+</li><li>O ficheiro "Geocaching.ml" tem de incluir logo nas primeiras linhas, um comentário inicial contendo: <b>o nome e número dos dois alunos que realizaram o projeto</b>;
+ indicação de quais as partes do trabalho que foram feitas e das que não
+ foram feitas (para facilitar uma correção sem enganos); ainda 
+possivelmente alertando para alguns aspetos da implementação que possam 
+ser menos óbvios para o avaliador.
+
+</li><li>O projeto é para ser realizado por grupos de dois alunos. Um 
+projeto entregue por três ou mais alunos vale zero valores. Poderão ser 
+permitidos grupos de um aluno em circunstâncias especiais que terão de 
+ser previamente autorizadas por AMD. 
+
+</li><li>Na realização deste projeto é proibido usar os mecanismos 
+imperativos que a linguagem OCaml suporta mas não foram estudados nas 
+aulas.
+</li><li>Mesmo que desenvolva o programa em Windows ou no MacOS, a 
+versão final do seu programa deverá correr no sistema Linux instalado 
+nos laboratórios.
+</li><li>Programe as funções recursivas usando o método indutivo. Também
+ pode usar livremente funções de biblioteca, especialmente as 
+disponíveis no módulo List.
+</li><li>O programa deve ser bem indentado, por forma a ficar bem 
+legível. Além disso, a largura do programa não deve exceder as 80 
+colunas para poderem ser impressos. Podem haver algumas exceções, muito 
+pontuais.
+</li><li>O não cumprimento das regras anteriores implica penalizações automáticas na nota.
+</li></ul>
+
+<hr><h1>Regras de entrega</h1> 
+<ul> 
+<li>Será ativado um concurso do Mooshak, que servirá para submeter os 
+trabalhos. Os detalhes da forma de fazer a submissão serão divulgados 
+nessa altura. Até lá preocupe-se apenas em escrever um bom programa.
+</li><li>Depois do prazo limite ainda se aceitam trabalhos atrasados, 
+mas com penalizações na nota. Mais detalhes nas primeiras linhas deste 
+enunciado.
+</li></ul> 
+ 
+<hr><h1>Outras regras</h1> 
+<ul> 
+<li>Apesar de o projeto ser de grupo, cada aluno, a título individual, 
+tem a responsabilidade de responder por todo o projeto. Assim é 
+indispensável que os dois membros de cada grupo programem efetivamente.
+</li><li>Não se proíbe que alunos de turnos práticos diferentes façam grupo. Isso é apenas desaconselhado.
+</li><li>Não há inscrição prévia dos grupos e basta que cada trabalho tenha 2 autores identificados.
+</li><li>A nota máxima do projeto é 20 valores.
+</li></ul> 
+ 
+<hr><h1>Avaliação</h1>
+
+O docente responsável pela gestão e pela avaliação deste trabalho é o Professor Artur Miguel Dias.
+
+<p>A nota do projeto será em grande parte determinada por meios 
+automáticos, através do Mooshak. Portanto é essencial respeitar a 
+especificação contida neste enunciado, em todos os seus detalhes.
+
+</p><p>Mas, relativamente a programas que funcionem minimamente, também 
+haverá uma apreciação mais subjetiva da qualidade, tendo em conta 
+aspetos, tais como:
+</p><ul>
+<li>organização,
+</li><li>clareza e simplicidade das ideias programadas,
+</li><li>bom uso da linguagem,
+</li><li>legibilidade do código,
+</li><li>em alguma medida, eficiência.
+</li></ul>
+
+Obviamente não é obrigatório fazer o trabalho todo para obter nota 
+positiva. Mas, claro, vale a pena trabalhar para produzir uma solução 
+bastante completa e com a melhor qualidade possível.
+<p>
+
+</p><hr><h1>Observações</h1>
+<ul>
+<li>Os grupos são incentivados a discutir entre si aspetos do projeto, 
+inclusivamente no fórum. Mas sempre que chega o momento de escrever 
+código concreto, esse tem de ser um esforço interno a cada grupo 
+(trabalhando de forma independente de todos os outros grupos). A escrita
+ de código exige esforço intelectual, mas só com esforço se consegue 
+evoluir.
+<p></p></li><li>O objetivo deste projeto é levar os alunos a praticar. 
+Um aluno que pratique de forma genuína ganha experiência e provavelmente
+ não terá dificuldade em conseguir aprovação nos testes e exames.
+<p></p></li><li>Cuidado com as fraudes. Por exemplo, se alguém dum grupo
+ oferecer o projeto resolvido a um elemento de outro grupo, trata-se 
+duma fraude envolvendo dois grupos. Também se um grupo deixa 
+distraidamente a área aberta e se alguém de outro grupo "rouba" o 
+projeto, então também se considera fraude dos dois grupos. Ainda um 
+terceiro caso: se dois grupos se juntam para fazer o projeto 
+conjuntamente e depois o entregam em duplicado, então também se 
+considera fraude. Em suma, cada grupo é responsável pelo seu projeto e 
+não o pode mostrar ou oferecer, direta ou indiretamente, de propósito ou
+ sem querer, o seu código a outro grupo. Note que é muito melhor ter 
+zero num dos três projetos do que ser logo excluído da cadeira por 
+motivo de fraude.
+</li></ul>
+
+
+
+
+
+<hr><h1>Final</h1>
+
+<p>Bom trabalho! Esperamos que goste.
+
+</p><hr><hr>
+</a></li></body></html>
